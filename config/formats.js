@@ -15,7 +15,7 @@ exports.Formats = [
 		banlist: ['Uber', 'Soul Dew']
 	},
 	 {
-                name: "1v1 (beta)",
+                name: "[Gen 6] 1v1",
                 section: 'XY Singles',
 
                 
@@ -52,12 +52,19 @@ exports.Formats = [
                 ]
         },
 	{  
-	        name: "OU Monotype (beta)",
+	        name: "[Gen 6] OU Monotype",
                 section: "XY Singles",
 
                 ruleset: ['Pokemon', 'Standard Pokebank', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
                 banlist: ['Uber', 'Soul Dew']
-        },
+    },
+	{
+                name: "[Gen 6] Random Battle",
+                section: "XY Singles",
+
+                team: 'random',
+                ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'HP Percentage Mod']
+    },
 	{
 		name: "Ubers (beta)",
 		section: "XY Singles",
