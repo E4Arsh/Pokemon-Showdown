@@ -879,6 +879,12 @@ var commands = exports.commands = {
 	 	    'Ace: Meloetta<br />'+
 			'<img src="http://play.pokemonshowdown.com/sprites/bwani/meloetta.gif"><img src="http://sprites.pokecheck.org/t/097.gif">')},	
 	
+	test: function(target, room, user) {
+		if (!this.canBroadcasr()) return;
+		this.sendReplyBox('Test-Subject <br />'+
+		'<i>"If triangles were round, how does the world turn?">/i> <br />'+
+		'Ace: Yanmega <br />'+
+		'<img src="http://play.pokemonshowdown.com/sprites/bw/yanmega.png">')}
 
 	
 	arshm: function(target, room, user) {  
