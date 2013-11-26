@@ -14,7 +14,7 @@ exports.Formats = [
 		noPokebank: true,
 		banlist: ['Uber', 'Soul Dew']
 	},
-	 {
+    {
                 name: "[Gen 6] 1v1",
                 section: 'XY Singles',
 
@@ -50,7 +50,7 @@ exports.Formats = [
                         'Memento', 'Explosion', 'Perish Song', 'Destiny Bond', 'Healing Wish', 'Selfdestruct', 'Lunar Dance', 'Final Gambit',
                         'Focus Sash'
                 ]
-        },
+    },
 	{  
 	        name: "[Gen 6] OU Monotype",
                 section: "XY Singles",
@@ -65,6 +65,13 @@ exports.Formats = [
                 team: 'random',
                 ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'HP Percentage Mod']
     },
+	{
+		name: "[Gen 6] UU",
+		section: "XY Singles",
+
+		ruleset: ['Pokebank OU (beta)'],
+		banlist: ['OU', 'BL', 'Drought', 'Sand Stream']
+	},
 	{
 		name: "Ubers (beta)",
 		section: "XY Singles",
