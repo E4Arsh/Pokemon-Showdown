@@ -14,6 +14,43 @@ exports.Formats = [
 		noPokebank: true,
 		banlist: ['Uber', 'Soul Dew']
 	},
+	 {
+                name: "1v1 (beta)",
+                section: 'XY Singles',
+
+                
+                onBegin: function() {
+                        this.p1.pokemon = this.p1.pokemon.slice(0,1);
+                        this.p1.pokemonLeft = this.p1.pokemon.length;
+                        this.p2.pokemon = this.p2.pokemon.slice(0,1);
+                        this.p2.pokemonLeft = this.p2.pokemon.length;
+                },
+                ruleset: ['Pokemon', 'Standard Pokebank'],
+                banlist: ['Unreleased', 'Illegal', 'Soul Dew',
+                        'Arceus', 'Arceus-Bug', 'Arceus-Dark', 'Arceus-Fairy', 'Arceus-Dragon', 'Arceus-Electric', 'Arceus-Fighting', 'Arceus-Fire', 'Arceus-Flying', 'Arceus-Ghost', 'Arceus-Grass', 'Arceus-Ground', 'Arceus-Ice', 'Arceus-Poison', 'Arceus-Psychic', 'Arceus-Rock', 'Arceus-Steel', 'Arceus-Water',
+                        'Blaziken',
+                        'Darkrai',
+                        'Deoxys', 'Deoxys-Attack',
+                        'Dialga',
+                        'Giratina', 'Giratina-Origin',
+                        'Groudon',
+                        'Ho-Oh',
+                        'Yveltal',
+                        'Xerneas',
+                        'Kyogre',
+                        'Kyurem-White',
+                        'Lugia',
+                        'Mewtwo',
+                        'Palkia',
+                        'Rayquaza',
+                        'Reshiram',
+                        'Shaymin-Sky',
+                        'Zekrom',
+                        
+                        'Memento', 'Explosion', 'Perish Song', 'Destiny Bond', 'Healing Wish', 'Selfdestruct', 'Lunar Dance', 'Final Gambit',
+                        'Focus Sash'
+                ]
+        },
 	{  
 	        name: "OU Monotype (beta)",
                 section: "XY Singles",
