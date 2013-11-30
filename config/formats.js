@@ -63,7 +63,7 @@ exports.Formats = [
                 section: "XY Singles",
 
                 team: 'random',
-                ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'HP Percentage Mod']
+                ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'Standard Pokebank', 'HP Percentage Mod']
     },
 	{
 		name: "Ubers (beta)",
