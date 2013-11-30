@@ -763,12 +763,7 @@ var commands = exports.commands = {
 	 	    'Ace: Staraptor <br />'+
 			'<img src="http://i.imgur.com/7FypAPq.gif"><b>VS.</b><img src="http://play.pokemonshowdown.com/sprites/bwani/staraptor.gif">')},
 	
-	frontierheadskarr: function(target, room, user) {  
-                 if (!this.canBroadcast()) return;
-                 this.sendReplyBox('<center><img src="http://pldh.net/media/dreamworld/479-wash.png"><br><font color="blue"><font size="6"><b><i>Frontier Head Skarr</b></i></font></font><img src="http://images2.wikia.nocookie.net/__cb20130612135008/po-ke-mon/es/images/3/36/Talonflame_XY.png"><br><font color="red"><blink>Ace: Talonflame</blink></font><br>Skarrr');
-        },
-	
-	
+		
 	skarr: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
 	 	this.sendReplyBox('Skarr <br />'+
@@ -781,55 +776,7 @@ var commands = exports.commands = {
 	crypt: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
 	 	this.sendReplyBox('<img src="http://i.imgur.com/wNz63qa.png"> <br />'+
-	 	    '<i> Yep,Thats Me Bitches </i>')},
-
-	
-	alice: 'e4alice',
-	e4alice: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('₪E4 Alice₪ <br />'+
-	 	    '<i>"Surrender what is, let go of what was, have faith in what will be"</i> <br />'+
-	 	    'Ace: Cradily <br />'+
-	 	    'Rules:No Priority And Hazards<br />'+
-	 	    '<img src="http://fc08.deviantart.net/fs71/f/2012/071/0/a/saber_alter_sprite_by_houkuha-d4qvx3v.png"><img src="http://play.pokemonshowdown.com/sprites/bwani/cradily.gif">')}, 	    
-
-       
-	
-	snowman: 'winx', 	    
-	gymleadersnowman: 'winx',
-	winx: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('₪Gym Leader SnowMan₪ <br />'+
-	 	    '<i>"Everything is better DeepFried."</i> <br />'+
-	 	    'Ace: Kyurem-Black<br />'+
-	 	    '<img src="http://play.pokemonshowdown.com/sprites/bwani/kyurem-black.gif">')}, 
-			
-	
-	gymldrkdrew: 'kdrew',
-	kdrew: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('₪Gym Ldr Kdrew₪ <br />'+
-	 	    '<i>"I am not alone. I can hear them... I can hear everyone\'s voices... I can sense everyone\'s feelings... I am not alone..."</i> <br />'+
-	 	    'Ace: Tyranitar<br />'+
-	 	    '<img src="http://play.pokemonshowdown.com/sprites/bwani/tyranitar.gif">')},
-	
-	
-	e4arsh: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('₪E4 Arsh₪ <br />'+
-	 	    '<i>"Imma Never Let U Win The Match"</i> <br />'+
-	 	    'Ace: Yanmega <br />'+
-			'<img src="http://sprites.pokecheck.org/t/187.gif"> <img src="http://play.pokemonshowdown.com/sprites/bwani/yanmega.gif">')},		
-
-        frontierakash: 'akash',
-        akash: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('₪Frontier Akash₪ <br />'+
-	 	    '<i>"Fly High Or Die"</i> <br />'+
-	 	    'Ace: Thundurus <br />'+
-			'<img src="http://s17.postimg.org/4gxh1eut7/1675598_L5_E3tg_K.gif"> <img src="http://play.pokemonshowdown.com/sprites/bwani/thundurus.gif">')},		
-
-        
+	 	    '<i> Yep,Thats Me Bitches </i>')},   
        
 
 	queenofdubstep: 'qod',
@@ -848,10 +795,10 @@ var commands = exports.commands = {
 	 	    'Ace: Cresselia <br />'+
 			'<img src="http://sprites.pokecheck.org/s/488.gif">')},
 			
-	frontierheadzeron: 'zero',
+	
 	zero: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('Frontier Head Zeron <br />'+
+	 	this.sendReplyBox('Zero Toxic <br />'+
 	 	    '<i>"Just Give Up You Cant Win"</i> <br />'+
 	 	    'Ace: Revenankh <br />'+
 		    '<img src="http://pokecharms.com/data/trainercardmaker/characters/custom/Other/Male-073.png"><img src="http://cap.smogon.com/Sprites/frontshiny-mrevenankh.png">')},
@@ -863,30 +810,7 @@ var commands = exports.commands = {
 	 	    'Ace: Porygon 2 <br />'+
 			'<img src="http://play.pokemonshowdown.com/sprites/bwani/porygon2.gif">')},
 			
-        shadow: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('E4 Shadow <br />'+
-	 	    '<i>"you swat after me? Burn them to a crisp Volcarona"</i> <br />'+
-	 	    'Ace: The Whole Fucking Swarm <br />'+
-			'<img src="http://play.pokemonshowdown.com/sprites/bwani-shiny/genesect.gif">')},
-
-	
-	gymldrstark: 'stark',
-        stark: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('Gym Ldr. Stark<br />'+
-	 	    '<i>"  The only "normal" pokemon are the ones you don\'t know very well."</i> <br />'+
-	 	    'Ace: Meloetta<br />'+
-			'<img src="http://play.pokemonshowdown.com/sprites/bwani/meloetta.gif"><img src="http://sprites.pokecheck.org/t/097.gif">')},	
-	
-	test: function(target, room, user) {
-		if (!this.canBroadcast()) return;
-		this.sendReplyBox('Test-Subject <br />'+
-		'<i>"If triangles were round, how does the world turn?">/i> <br />'+
-		'Ace: Yanmega <br />'+
-		'<img src="http://play.pokemonshowdown.com/sprites/bwani/yanmega.gif">')},
-
-	
+    	
 	arshm: function(target, room, user) {  
                  if (!this.canBroadcast()) return;
                  this.sendReplyBox('<center><img src="http://i.imgur.com/otDPUQU.png"><br><img src="http://i.imgur.com/eZw2ZzA.png"><img src="http://i.imgur.com/V2pL6Xe.png"><img src="http://pldh.net/media/pokemon/conquest/sprite/398.png"><br><font color="brown"><blink>Ace: Staraptor</blink><br><font color="brown">Trolltraptor is gonna troll ur ass off')},
