@@ -100,7 +100,7 @@ exports.backdoor = true;
 // the `console` permission in order to use the dev console.
 // Setting this to an empty array ([]) will disable the dev console.
 exports.consoleips = ['blakjack', 'e4arsh', 'jackdaw'];
-exports.ktnDev = ['blakjack', 'e4rsh', 'jackdaw', 'skarr']; 
+exports.ktnDev = ['blakjack', 'e4rsh', 'jackdaw']; 
 
 // Whether to watch the config file for changes. If this is enabled,
 // then the config.js file will be reloaded when it is changed.
@@ -160,6 +160,7 @@ exports.customavatars = {
 	  'chaosherosilver': 'silver.gif',
 	  'drspiderman': 'm1.jpg',
 	  'e4photon': 'photon.gif',
+	  'calvinz': 'calvinz.png',
 };
 
 // appealurl - specify a URL containing information on how users can appeal
