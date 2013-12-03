@@ -161,6 +161,7 @@ exports.customavatars = {
 	  'drspiderman': 'm1.jpg',
 	  'e4photon': 'photon.gif',
 	  'calvinz': 'calvinz.png',
+	  '10messi': '10messi.gif',
 };
 
 // appealurl - specify a URL containing information on how users can appeal
