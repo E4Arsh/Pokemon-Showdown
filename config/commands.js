@@ -791,10 +791,7 @@ var commands = exports.commands = {
 	surfersunite: 'surfing',
 	surfing: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('Surfing <br />'+
-	 	    '<i>"Offense, defense put them together and you have the ultimate battle strategy"</i> <br />'+
-	 	    'Ace: Cresselia <br />'+
-			'<img src="http://sprites.pokecheck.org/s/488.gif">')},
+	 	this.sendReplyBox('<center><img src="http://i.imgur.com/U2eSHfF.png"><br><img src="http://i.imgur.com/RNy1lDq.gif"><br><font color="black"><b>Ace:</font><blink><font color="purple"> Gallade </font></blink><br><font color="orange"><i>To defeat a psychic you must predict like a psychic.</i></b>')},
 			
 	
 	zero: function(target, room, user) {  
