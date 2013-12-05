@@ -826,7 +826,7 @@ var commands = exports.commands = {
 	 	    'Ace: Ampharos <br />'+
 			'<img src="http://play.pokemonshowdown.com/sprites/bwani/ampharos.gif">')},	
 
-       photon: 'e4photon'
+       photon: 'e4photon',
        e4photon:function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
 	 	this.sendReplyBox('<center><img src="http://192.184.93.98:8000/avatars/photon.gif"> <img src="http://i.imgur.com/30G6hEi.gif"><img src="http://192.184.93.98:8000/avatars/photon.gif"> <br> <blink><font color="pink">Ace: Jigglypuff</font></blink> <br> Dont mess with the jigglypuffs or get destroyed!')};
