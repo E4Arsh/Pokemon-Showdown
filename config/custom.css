@@ -12,12 +12,12 @@
 
 body{background-image:url("http://i.imgur.com/lVA0u3p.jpg");background-repeat:no-repeat;background-position:center}
 
-.chat-log{font-size:10pt;background: url("http://i.imgur.com/LmwNFlS.png") no-repeat scroll right bottom;background:#f63113;color:#000;overflow:auto;}
+.chat-log{font-size:10pt;background: url("http://i.imgur.com/LmwNFlS.png") no-repeat scroll right bottom;background:#fb570e;color:#000;overflow:auto;}
 
 .menugroup .button{background:#ffa500}.menugroup 
 
 .menugroup {
-background:#f63113);
+background:#fb570e);
 text-align: center;
 }
 
@@ -25,7 +25,7 @@ text-align: center;
 
 .userlist {
 border-left: 1px solid #D5DDE4;
-background: #f63113;
+background: #fb570e;
 }
 
 .userlist,
