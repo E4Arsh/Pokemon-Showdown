@@ -6,6 +6,13 @@ exports.Formats = [
 	// XY Singles
 	///////////////////////////////////////////////////////////////////
 
+   {
+                name: "[Gen 6] Random Battle",
+                section: "XY Singles",
+
+                team: 'random',
+                ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'Standard Pokebank', 'HP Percentage Mod']
+    },
 	{
 		name: "OU (beta)",
 		section: "XY Singles",
@@ -57,15 +64,8 @@ exports.Formats = [
 
                 ruleset: ['Pokemon', 'Standard Pokebank', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
                 banlist: ['Uber', 'Soul Dew']
-    },
-	{
-                name: "[Gen 6] Random Battle",
-                section: "XY Singles",
-
-                team: 'random',
-                ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'Standard Pokebank', 'HP Percentage Mod']
-    },
-	{
+        },
+        {
 		name: "Ubers (beta)",
 		section: "XY Singles",
 
