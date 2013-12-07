@@ -6,7 +6,7 @@
  * here, then use it by typing /whois into Pokemon Showdown.
  *
  * A command can be in the form:
- *   ip: 'whois',
+ *   ip: 'whois'
  * This is called an alias: it makes it so /ip does the same thing as
  * /whois.
  *
@@ -821,10 +821,7 @@ var commands = exports.commands = {
 	
 	sooperpooper: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('Sooper Pooper <br />'+
-	 	    '<i>"Did I ever tell you the definition... of insanity?"</i> <br />'+
-	 	    'Ace: Ampharos <br />'+
-			'<img src="http://play.pokemonshowdown.com/sprites/bwani/ampharos.gif">')},	
+	 	this.sendReplyBox('<center><img src="http://i.imgur.com/ALqTE5D.png"><img src="http://i.imgur.com/Gc8Rirx.gif"><br><font color="black"><b> Ace:<BLINK></font><font color="purple"> Mega Ampharos </font></blink><br><i><font color="indigo"> Did I ever tell you the definition... of insanity?')},	
 
        photon: 'e4photon',
        e4photon:function(target, room, user) {  
