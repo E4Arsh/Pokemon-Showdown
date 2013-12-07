@@ -163,6 +163,7 @@ exports.customavatars = {
 	  'calvinz': 'calvinz.png',
 	  '10messi': '10messi.gif',
 	  'dis': 'dis.png'
+	  'aelitestorm': 'storm.gif',
 };
 
 // appealurl - specify a URL containing information on how users can appeal
