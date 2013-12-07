@@ -830,7 +830,7 @@ var commands = exports.commands = {
   	
   	arjunb: function(target, room, user) {
   		if (!this.canBroadcast()) return;
-  		this.sendReplyBox('<center><img src="http://i.imgur.com/VwCa2CS.png"> <img src="http://imgur.com/VxNGram.gif"> <img src="http://i.imgur.com/hpxiwWM.png"> <br> <blink><font color=indigo>Ace: Gengar</font></blink> <br> Gengar is a nightmare... and a nightmare is DEATH!')
+  		this.sendReplyBox('<center><img src="http://i.imgur.com/VwCa2CS.png"> <img src="http://imgur.com/VxNGram.gif"> <img src="http://i.imgur.com/hpxiwWM.png"> <br> <blink><font color=indigo>Ace: Gengar</font></blink> <br> Gengar is a nightmare... and a nightmare is DEATH!')},
   	ncrypt: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
 	 	this.sendReplyBox('nCrypt <br />'+
