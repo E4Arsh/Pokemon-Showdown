@@ -824,10 +824,13 @@ var commands = exports.commands = {
 	 	this.sendReplyBox('<center><img src="http://i.imgur.com/ALqTE5D.png"><img src="http://i.imgur.com/Gc8Rirx.gif"><br><font color="black"><b> Ace:<BLINK></font><font color="purple"> Mega Ampharos </font></blink><br><i><font color="indigo"> Did I ever tell you the definition... of insanity?')},	
 
        photon: 'e4photon',
-       e4photon:function(target, room, user) {  
+       e4photon: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
 	 	this.sendReplyBox('<center><img src="http://192.184.93.98:8000/avatars/photon.gif"> <img src="http://i.imgur.com/30G6hEi.gif"><img src="http://192.184.93.98:8000/avatars/photon.gif"> <br> <blink><font color="pink">Ace: Jigglypuff</font></blink> <br> Dont mess with the jigglypuffs or get destroyed!')},
   	
+  	arjunb: function(target, room, user) {
+  		if (!this.canBroadcast()) return;
+  		this.sendReplyBox('<center><img src="http://i.imgur.com/VwCa2CS.png"> <img src="http://imgur.com/VxNGram.gif"> <img src="http://i.imgur.com/hpxiwWM.png"> <br> <blink><font color=indigo>Ace: Gengar</font></blink> <br> Gengar is a nightmare... and a nightmare is DEATH!')},
   	ncrypt: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
 	 	this.sendReplyBox('nCrypt <br />'+

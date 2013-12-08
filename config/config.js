@@ -162,7 +162,9 @@ exports.customavatars = {
 	  'e4photon': 'photon.gif',
 	  'calvinz': 'calvinz.png',
 	  '10messi': '10messi.gif',
-	  'dis': 'dis.png'
+	  'dis': 'dis.png',
+	  'aelitestorm': 'storm.gif',
+	  'shirayuri': 'okami95.png'
 };
 
 // appealurl - specify a URL containing information on how users can appeal
