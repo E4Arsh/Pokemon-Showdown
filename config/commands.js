@@ -828,8 +828,8 @@ var commands = exports.commands = {
 	 	if (!this.canBroadcast()) return;
 	 	this.sendReplyBox('<center><img src="http://192.184.93.98:8000/avatars/photon.gif"> <img src="http://i.imgur.com/30G6hEi.gif"><img src="http://192.184.93.98:8000/avatars/photon.gif"> <br> <blink><font color="pink">Ace: Jigglypuff</font></blink> <br> Dont mess with the jigglypuffs or get destroyed!')},
   	
-  	messi: '10messi',
-  	10messi: function(target, room, user) {  
+  	
+  	messi: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
 	 	this.sendReplyBox('<img src="http://pldh.net/media/pokemon/ken_sugimori/update_bw/646-black.png"><img src="http://i.imgur.com/MWzPDNe.gif"><img src="http://pldh.net/media/sugimori/373.png"><br><center><font color="black">Ace:</font><blink><font color="lightblue"> Salamence and Kyurem-B</blink></font><br><i><font color="darkblue">Do you think Messi is awesome? Then im more awesome cus i have a 10 in front of it.')},
   	
