@@ -765,29 +765,6 @@ var commands = exports.commands = {
 			'<img src="http://i.imgur.com/7FypAPq.gif"><b>VS.</b><img src="http://play.pokemonshowdown.com/sprites/bwani/staraptor.gif">')},
 	
 		
-	skarr: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('Skarr <br />'+
-	 	    '<i>"Do you know how i got these Skarr\'s?."</i> <br />'+
-	 	    'Ace: Terrakion <br />'+
-	 	    'Rules:Dont be ass<br />'+
-	 	    '<img src="http://i.imgur.com/TbzLf0c.gif"><b>VS.</b><img src="http://play.pokemonshowdown.com/sprites/bwani/terrakion.gif">')},
-	 	    
-	
-	crypt: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('<img src="http://i.imgur.com/wNz63qa.png"> <br />'+
-	 	    '<i> Yep,Thats Me Bitches </i>')},   
-       
-
-	queenofdubstep: 'qod',
-	qod: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('Queen Of Dubstep <br />'+
-	 	    '<i>"Never Back Down"</i> <br />'+
-	 	    'Ace: Salamence <br />'+
-			'<img src="http://play.pokemonshowdown.com/sprites/bwani/salamence.gif">')},
-			
 	surfersunite: 'surfing',
 	surfing: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
@@ -835,16 +812,9 @@ var commands = exports.commands = {
   	
   	arjunb: function(target, room, user) {
   		if (!this.canBroadcast()) return;
-  		this.sendReplyBox('<center><img src="http://i.imgur.com/VwCa2CS.png"> <img src="http://imgur.com/VxNGram.gif"> <img src="http://i.imgur.com/hpxiwWM.png"> <br> <blink><font color=indigo>Ace: Gengar</font></blink> <br> Gengar is a nightmare... and a nightmare is DEATH!')},
+  		this.sendReplyBox('<center><img src="http://i.imgur.com/VwCa2CS.png"> <img src="http://imgur.com/VxNGram.gif"> <img src="http://i.imgur.com/hpxiwWM.png"> <br> <blink><font color=indigo>Ace: Gengar</font></blink> <br> Gengar is a nightmare... and a nightmare is DEATH!');
   	
-  	ncrypt: function(target, room, user) {  
-	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('nCrypt <br />'+
-	 	    'Ace: Terrakion <br />'+
-	 	    '<i>" Fighting is my passion,strenght is my only friend and punches are the only things I trust!!"</i> <br />'+
-			'<img src="http://i.imgur.com/eaNvlMY.png">');	
-         	
-     
+  	
       	}, 
 	opensource: function(target, room, user) {
 		if (!this.canBroadcast()) return;
