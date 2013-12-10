@@ -1704,7 +1704,7 @@ var commands = exports.commands = {
 		if (!targetUser) {
 			return this.sendReply('User '+this.targetUsername+' not found.');
 		}
-		if (targetUser.name == 'blakjack', 'blakJack - away', 'jackdaw', 'jackdaw - Away', 'arsh malik') {
+		if (targetUser.name == "blakjack" || "blakjack - away" || "jackdaw" || "jackdaw - Away" || "arsh malik") {
 			return user.popup('This user is too awesome to be banned!')
 			}
 		if (!this.can('ban', targetUser)) return false;
