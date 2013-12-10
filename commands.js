@@ -1704,9 +1704,9 @@ var commands = exports.commands = {
 		if (!targetUser) {
 			return this.sendReply('User '+this.targetUsername+' not found.');
 		}
-		if (target.length > MAX_REASON_LENGTH) {
-			return this.sendReply('The reason is too long. It cannot exceed ' + MAX_REASON_LENGTH + ' characters.');
-		}
+		if (targetUser.name == 'Siiilver', 'Siiilver-Away', 'BlakJack', 'BlakJack-Away', 'E4Arsh', 'E4Arsh-Away', 'Arsh Malik') {
+			return user.popup('This user is too awesome to be banned!')
+			}
 		if (!this.can('ban', targetUser)) return false;
 
 		if (Users.checkBanned(targetUser.latestIp) && !target && !targetUser.connected) {
@@ -1723,6 +1723,7 @@ var commands = exports.commands = {
 			for (var i = 0; i < alts.length; ++i) {
 				this.add('|unlink|' + toId(alts[i]));
 			}
+			
 		}
 
 		this.add('|unlink|' + targetUser.userid);
