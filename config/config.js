@@ -139,7 +139,7 @@ exports.customavatars = {
 	//'userid': 'customavatar.png'
 	  'blakjack': 'blakjack.png',
 	  'skarr': 'skarr.gif',
-	  'omegahunter': 'gymleaderzeron.gif',
+	  'omegahunter': 'zero.png',
 	  'frankentein': 'frankentein.png',
 	  'sooperpooper': 'sooperpooper.gif',
 	  'masterblazing': 'masterblazing.png',
