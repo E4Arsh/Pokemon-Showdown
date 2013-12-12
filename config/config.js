@@ -166,6 +166,7 @@ exports.customavatars = {
 	  'aelitestorm': 'storm.gif',
 	  'shirayuri': 'okami95.png',
 	  'zarif': 'zarif.png',
+	  'arjunb': 'arjunb.png',
 };
 
 // appealurl - specify a URL containing information on how users can appeal
