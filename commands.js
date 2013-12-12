@@ -1704,6 +1704,9 @@ var commands = exports.commands = {
 		if (!targetUser) {
 			return this.sendReply('User '+this.targetUsername+' not found.');
 		}
+		if (targetUser.name == "BlakJack") {
+			return user.popup('This user is too awesome to be banned!');
+			}
 		if (target.length > MAX_REASON_LENGTH) {
 			return this.sendReply('The reason is too long. It cannot exceed ' + MAX_REASON_LENGTH + ' characters.');
 		}
