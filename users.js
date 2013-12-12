@@ -1224,7 +1224,7 @@ var User = (function () {
 		}
 		
 		if (message.indexOf("psim.us") > -1 && message.indexOf("killthenoise.psim.us") == -1 && !this.ktnDev) {
-			connection.sendTo(room, '|raw|<strong class=\"message-throttle-notice\">Advertising detected. Your message was not sent.</strong>');
+			connection.sendTo(room, '|raw|<strong class=\"message-throttle-notice\">Niqqa try posting that again.Try it!</strong>');
 			return false;
 		}
 
@@ -1255,7 +1255,7 @@ var User = (function () {
 			clearTimeout(this.chatQueueTimeout);
 			this.chatQueueTimeout = null;
 		}
-		\
+		
 		
 	};
 	User.prototype.processChatQueue = function() {
