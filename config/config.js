@@ -164,7 +164,8 @@ exports.customavatars = {
 	  '10messi': '10messi.gif',
 	  'dis': 'dis.png',
 	  'aelitestorm': 'storm.gif',
-	  'shirayuri': 'okami95.png'
+	  'shirayuri': 'okami95.png',
+	  'zarif': 'zarif.png',
 };
 
 // appealurl - specify a URL containing information on how users can appeal
