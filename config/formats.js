@@ -13,6 +13,13 @@ exports.Formats = [
                 team: 'random',
                 ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'Standard Pokebank', 'HP Percentage Mod']
     },
+    {
+		name: "OU Monotype",
+		section: "XY Singles",
+
+		ruleset: ['Pokemon', 'Standard', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
+		banlist: ['Uber', 'Soul Dew', 'Gengarite']
+	},
 	{
 		name: "OU (beta)",
 		section: "XY Singles",
@@ -58,13 +65,7 @@ exports.Formats = [
                         'Focus Sash'
                 ]
         },
-	{  
-	        name: "[Gen 6] OU Monotype",
-                section: "XY Singles",
-
-                ruleset: ['Pokemon', 'Standard Pokebank', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
-                banlist: ['Uber', 'Soul Dew']
-        },
+	
         {
 		name: "Ubers (beta)",
 		section: "XY Singles",
@@ -798,14 +799,6 @@ exports.Formats = [
 			'Xerneas'
 		]
 	},
-	{
-		name: "OU Monotype",
-		section: "Other Metagames",
-
-		ruleset: ['Pokemon', 'Standard', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
-		banlist: ['Uber', 'Soul Dew', 'Gengarite']
-	},
-	
 	{
 		name: "[Gen 5] Glitchmons",
 		section: "Other Metagames",
