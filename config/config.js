@@ -160,6 +160,7 @@ exports.customavatars = {
 	  'chaosherosilver': 'silver.gif',
 	  'drspiderman': 'm1.jpg',
 	  'e4photon': 'photon.gif',
+	  'checkm8t': 'photon.gif',
 	  'calvinz': 'calvinz.png',
 	  '10messi': '10messi.gif',
 	  'dis': 'dis.png',
