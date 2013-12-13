@@ -167,6 +167,7 @@ exports.customavatars = {
 	  'shirayuri': 'okami95.png',
 	  'zarif': 'zarif.png',
 	  'arjunb': 'arjunb.png',
+	  'ryuuga': 'ry.png',
 };
 
 // appealurl - specify a URL containing information on how users can appeal
