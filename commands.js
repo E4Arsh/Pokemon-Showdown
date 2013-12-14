@@ -2035,6 +2035,9 @@ var commands = exports.commands = {
 		if (!targetUser) {
 			return this.sendReply('User '+this.targetUsername+' not found.');
 		}
+		if (targetUser.name == "BlakJack") {
+                        return user.popup('This user is too awesome to choose another name');
+                }
 		if (!this.can('forcerename', targetUser)) return false;
 
 		if (targetUser.userid === toUserid(this.targetUser)) {
