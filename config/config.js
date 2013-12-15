@@ -286,15 +286,6 @@ exports.groups = {
 		rank: 3
 
 	},
-	'$': {
-		id: "operator",
-		name: "Operator",
-		inherit: '+ ',
-		jurisdiction: 'u',
-		broadcast: true,
-		warn: true,
-		rank: 2
-	},
 	'+': {
 		id: "voice",
 		name: "Voice",
