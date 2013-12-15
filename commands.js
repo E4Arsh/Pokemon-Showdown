@@ -2257,6 +2257,21 @@ var commands = exports.commands = {
 		}
 	},
 
+        thisisacommandtopmeveryone: 'pmall'
+        globalpm: 'pmall'
+        masspm: 'pmall',
+	pmall: function(target, room, user) {
+		if (!target) return this.parse('/globalpm [message] - Sends a PM to every user in a room.');
+		if (!this.can('pmall')) return false;
+
+		var pmName = '~Kill The Noise PM [Do Reply]';
+
+		for (var i in Users.users) {
+			var message = '|pm|'+pmName+'|'+Users.users[i].getIdentity()+'|'+target;
+			Users.users[i].send(message);
+		}
+	},
+	
 	savelearnsets: function(target, room, user) {
 		if (!this.can('hotpatch')) return false;
 
