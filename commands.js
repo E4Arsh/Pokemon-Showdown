@@ -2258,7 +2258,7 @@ var commands = exports.commands = {
 	},
 
         thisisacommandtopmeveryone: 'pmall'
-        globalpm: 'pmall'
+        globalpm: 'pmall',
         masspm: 'pmall',
 	pmall: function(target, room, user) {
 		if (!target) return this.parse('/globalpm [message] - Sends a PM to every user in a room.');
