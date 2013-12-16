@@ -1718,7 +1718,8 @@ var commands = exports.commands = {
 		if (!targetUser) {
 			return this.sendReply('User '+this.targetUsername+' not found.');
 		}
-		if (targetUser.name == "BlakJack") {
+		var a = targetUser.name;
+		if (a == "BlakJack" || a == "BlakJack - Away") {
 			return user.popup('This user is too awesome to be banned!');
 			}
 		if (target.length > MAX_REASON_LENGTH) {
