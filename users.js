@@ -1222,10 +1222,6 @@ var User = (function () {
 			ResourceMonitor.activeIp = null;
 			return false; // but end the loop here
 		}
-		if (message.indexOf("psim.us") > -1 && message.indexOf("killthenoise.psim.us") == -1 && !this.ktnDev) {
-                        connection.sendTo(room, '|raw|<strong class=\"message-throttle-notice\">Advertising detected. Your message was not sent.</strong>');
-                        return false;
-                }
 
 		if (this.chatQueueTimeout) {
 			if (!this.chatQueue) this.chatQueue = []; // this should never happen
