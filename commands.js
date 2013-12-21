@@ -2973,7 +2973,7 @@ function getRandMessage(user){
 	switch(Math.floor(Math.random()*numMessages)){
 		case 0: message = message + user.name + ' has vanished into nothingness!';
 			break;
-		case 1: message = message + user.name + ' visited kupo\'s bedroom and never returned!';
+		case 1: message = message + user.name + ' visited BlakJack\'s bedroom and never returned!';
 			break;
 		case 2: message = message + user.name + ' used Explosion!';
 			break;
@@ -3011,7 +3011,7 @@ function getRandMessage(user){
 			break;
 		case 19: message = message + user.name + ' got their sausage smoked by Charmanderp!';
 			break;
-		case 20: message = message + user.name + ' was forced to give mpea an oil massage!';
+		case 20: message = message + user.name + ' was forced to give UnovaChampionN an oil massage!';
 			break;
 		case 21: message = message + user.name + ' took an arrow to the knee... and then one to the face.';
 			break;
@@ -3045,6 +3045,8 @@ function getRandMessage(user){
 			break;
 		case 36: message = message + user.name + ' was kicked from server! (lel clause)';
 			break;
+                case 37: message = message + username  + 'was struck by a wild wrecking ball!';
+                        break;
 		default: message = message + user.name + ' was Pan Hammered!';
 	};
 	message = message + ' ~~';
