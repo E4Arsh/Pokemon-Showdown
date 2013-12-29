@@ -1,4 +1,4 @@
-// Note: This is the list of formats
+﻿// Note: This is the list of formats
 // The rules that formats use are stored in data/formats.js
 
 exports.Formats = [
@@ -14,11 +14,11 @@ exports.Formats = [
                 ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'Standard Pokebank', 'HP Percentage Mod']
     },
     {
-		name: "OU Monotype",
-		section: "XY Singles",
+               name: "OU Monotype",
+		section: "Other Metagames",
 
 		ruleset: ['Pokemon', 'Standard', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
-		banlist: ['Uber', 'Soul Dew', 'Gengarite']
+		banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite']
 	},
 	{
 		name: "OU",
@@ -27,7 +27,7 @@ exports.Formats = [
 		ruleset: ['Pokemon', 'Standard', 'Team Preview'],
 		banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite']
 	},
-<<<<<<< HEAD
+
 	 {
                 name: "[Gen 6] 1v1",
                 section: 'XY Singles',
@@ -68,10 +68,10 @@ exports.Formats = [
 	
         {
 		name: "Ubers (beta)",
-=======
+
 	{
 		name: "Ubers",
->>>>>>> upstream/master
+
 		section: "XY Singles",
 
 		ruleset: ['Pokemon', 'Standard Ubers', 'Team Preview'],
@@ -635,7 +635,7 @@ exports.Formats = [
 		]
 	},
 	{
-<<<<<<< HEAD
+
                  name: "C&E",
                  section: "Other Metagames",
  
@@ -644,10 +644,8 @@ exports.Formats = [
                 banlist: ['Soul Dew', 'Uber', 'Farfetchd', 'Kangaskhan', 'Pinsir', 'Heracross', 'unown', 'girafarig', 'dunsparce', 'shuckle', 'articuno', 'zapdos', 'moltres', 'qwilfish', 'corsola', 'delibird', 'stantler', 'smeargle', 'skarmory', 'miltank', 'tauros', 'lapras', 'ditto', 'aerodactyl', 'sableye', 'mawile', 'plusle', 'minum', 'volbeat', 'illumise', 'torkoal', 'spinda', 'seviper', 'zangoose', 'lunatone', 'solrock', 'castform', 'kecleon', 'tropius', 'absol', 'relicanth', 'luvdisc', 'pachirisu']
 				},
 	{
-		name: "CAP (beta)",
-=======
-		name: "CAP",
->>>>>>> upstream/master
+                name: "CAP",
+
 		section: "Other Metagames",
 
 		ruleset: ['CAP Pokemon', 'Standard', 'Team Preview'],
@@ -712,17 +710,9 @@ exports.Formats = [
 			'Xerneas'
 		]
 	},
+	
 	{
-<<<<<<< HEAD
-=======
-		name: "OU Monotype",
-		section: "Other Metagames",
 
-		ruleset: ['Pokemon', 'Standard', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
-		banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite']
-	},
-	{
->>>>>>> upstream/master
 		name: "[Gen 5] Glitchmons",
 		section: "Other Metagames",
 
