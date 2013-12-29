@@ -12,7 +12,7 @@ exports.Formats = [
                 
 
                 team: 'random',
-                ruleset: ['PotD', 'Pokemon', 'Standard', 'Sleep Clause Mod', 'HP Percentage Mod']
+                ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'HP Percentage Mod']
         }, 
        {
                 name: "OU",
