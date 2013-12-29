@@ -6,26 +6,11 @@ exports.Formats = [
         // XY Singles
         ///////////////////////////////////////////////////////////////////
 
-       {
-                name: "Random Battle",
-                section: "XY Singles",
-                
-
-                team: 'random',
-                ruleset: ['PotD', 'Pokemon', 'Standard', 'Sleep Clause Mod', 'HP Percentage Mod']
-        }, 
-       {
+        {
                 name: "OU",
                 section: "XY Singles",
 
                 ruleset: ['Pokemon', 'Standard', 'Team Preview'],
-                banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite']
-        },
-        {
-                name: "OU Monotype",
-                section: "Other Metagames",
-
-                ruleset: ['Pokemon', 'Standard', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
                 banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite']
         },
         {
@@ -43,16 +28,6 @@ exports.Formats = [
                 ruleset: ['Pokemon', 'Standard', 'Team Preview', 'Little Cup'],
                 banlist: ['Sonicboom', 'Dragon Rage', 'Scyther', 'Sneasel']
         },
-        {
-                name: "1v1",
-                section: 'XY Singles',
-
-                onBegin: function() {
-                        this.p1.pokemon = this.p1.pokemon.slice(0,1);
-                        this.p1.pokemonLeft = this.p1.pokemon.length;
-                        this.p2.pokemon = this.p2.pokemon.slice(0,1);
-                        this.p2.pokemonLeft = this.p2.pokemon.length;
-                },
         {
                 name: "XY Battle Spot Singles",
                 section: "XY Singles",
@@ -616,6 +591,13 @@ exports.Formats = [
                         'Yveltal',
                         'Xerneas'
                 ]
+        },
+        {
+                name: "OU Monotype",
+                section: "Other Metagames",
+
+                ruleset: ['Pokemon', 'Standard', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
+                banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite']
         },
         {
                 name: "[Gen 5] Glitchmons",
