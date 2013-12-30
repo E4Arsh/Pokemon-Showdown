@@ -47,6 +47,39 @@ exports.Formats = [
                 }
         },
         {
+                name: "1v1",
+                section: 'XY Singles',
+
+                onBegin: function() {
+                        this.p1.pokemon = this.p1.pokemon.slice(0,1);
+                        this.p1.pokemonLeft = this.p1.pokemon.length;
+                        this.p2.pokemon = this.p2.pokemon.slice(0,1);
+                        this.p2.pokemonLeft = this.p2.pokemon.length;
+                },
+                ruleset: ['Pokemon', 'Standard'],
+                banlist: ['Unreleased', 'Illegal', 'Soul Dew',
+                        'Arceus', 'Arceus-Bug', 'Arceus-Dark', 'Arceus-Dragon', 'Arceus-Electric', 'Arceus-Fighting', 'Arceus-Fire', 'Arceus-Flying', 'Arceus-Ghost', 'Arceus-Grass', 'Arceus-Ground', 'Arceus-Ice', 'Arceus-Poison', 'Arceus-Psychic', 'Arceus-Rock', 'Arceus-Steel', 'Arceus-Water', 'Arceus-Fairy',
+                        'Blaziken','Blaziken-Mega',
+                        'Darkrai',
+                        'Deoxys', 'Deoxys-Attack',
+                        'Dialga',
+                        'Giratina', 'Giratina-Origin',
+                        'Groudon',
+                        'Ho-Oh',
+                        'Kyogre',
+                        'Kyurem-White',
+                        'Lugia',
+                        'Mewtwo','Mewtwo-Mega-X','Mewtwo-Mega-Y',
+                        'Palkia',
+                        'Rayquaza',
+                        'Reshiram',
+                        'Shaymin-Sky',
+                        'Zekrom',
+                        'Memento', 'Explosion', 'Perish Song', 'Destiny Bond', 'Healing Wish', 'Selfdestruct', 'Lunar Dance', 'Final Gambit',
+                        'Focus Sash'
+                ]
+        },
+        {
                 name: "Custom Game",
                 section: "XY Singles",
 
