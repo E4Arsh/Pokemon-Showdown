@@ -1846,7 +1846,39 @@ var commands = exports.commands = {
                 
                 targetUser.resetName();
         },
+        
+        roomlist: function(target, room, user, connection) {
+                if (!user.can('makeroom')) return false;
+                        for (var u in Rooms.rooms) {
+                                if (Rooms.rooms[u].type === "chat") {
+                                        if (!Rooms.rooms[u].active && !Rooms.rooms[u].isPrivate) {
+                                                connection.sendTo(room.id, '|raw|INACTIVE: <font color=red><b>'+u+'</b></font>');
+                                        }
+                                        if (Rooms.rooms[u].isPrivate && Rooms.rooms[u].active) {
+                                                connection.sendTo(room.id, '|raw|PRIVATE: <b>'+u+'</b>');
+                                        }
+                                        if (!Rooms.rooms[u].active && Rooms.rooms[u].isPrivate) {
+                                                connection.sendTo(room.id, '|raw|INACTIVE and PRIVATE: <font color=red><b>'+u+'</font></b>');
+                                        }
+                                        if (Rooms.rooms[u].active && !Rooms.rooms[u].isPrivate) {
+                                                connection.sendTo(room.id, '|raw|<font color=green>'+u+'</font>');
+                                        }
+                                }
+                        }
+                },
 
+        unlink: function(target, room, user) {
+                if (!target) return this.parse('/help unlink');
+                target = this.splitTarget(target);
+                var targetUser = this.targetUser;
+                if (!targetUser) return this.sendReply('User '+this.targetUser+' not found.');
+                if (!this.can('unlink', targetUser)) return this.sendReply('/unlink - Access denied.');
+                this.privateModCommand('('+targetUser.name+' had their links unlinked by '+user.name+'. Any links they have posted will now be unclickable.)');
+                for (var u in targetUser.prevNames) {
+                        this.add('|unlink|'+targetUser.prevNames[u]);
+                }
+        },
+        
 	/*********************************************************
 	 * Moderating: Other
 	 *********************************************************/
@@ -2005,6 +2037,19 @@ var commands = exports.commands = {
                 targetUser.send(user.name+' sent a popup message to you.');
                 
                 this.logModCommand(user.name+' send a popup message to '+targetUser.name);
+        },
+        
+        masspm: 'pmall',
+        pmall: function(target, room, user) {
+                if (!target) return this.parse('/pmall [message] - Sends a PM to every user in a room.');
+                if (!this.can('pmall')) return false;
+
+                var pmName = '~Frost PM [Do not reply]';
+
+                for (var i in Users.users) {
+                        var message = '|pm|'+pmName+'|'+Users.users[i].getIdentity()+'|'+target;
+                        Users.users[i].send(message);
+                }
         },
 
 
