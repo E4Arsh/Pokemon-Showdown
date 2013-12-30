@@ -169,7 +169,8 @@ exports.customavatars = {
 	  'enzarif': 'zarif.png',
 	  'arjunb': 'arjunb.png',
 	  'ryuuga': 'ry.png',
-          'astrelegit': 'astre.png',    
+          'astrelegit': 'astre.png',
+          'e6mac': 'mac.png',
 };
 
 // appealurl - specify a URL containing information on how users can appeal
