@@ -90,7 +90,7 @@ function searchUser(name) {
 var connections = exports.connections = {};
 
 function socketConnect(worker, workerid, socketid, ip) {
-<<<<<<< HEAD
+	
         var id = ''+workerid+'-'+socketid;
         var connection = connections[id] = new Connection(id, worker, socketid, null, ip);
 
@@ -146,7 +146,7 @@ function socketConnect(worker, workerid, socketid, ip) {
                         if (connection.user) connection.user.lock(true);
                 }
         });
-=======
+
 	var id = ''+workerid+'-'+socketid;
 	var connection = connections[id] = new Connection(id, worker, socketid, null, ip);
 
@@ -202,7 +202,7 @@ function socketConnect(worker, workerid, socketid, ip) {
 			if (connection.user) connection.user.lock(true);
 		}
 	});
->>>>>>> upstream/master
+
 }
 
 function socketDisconnect(worker, workerid, socketid) {
@@ -328,7 +328,7 @@ importBannedWords();
 
 // User
 var User = (function () {
-<<<<<<< HEAD
+
         function User(connection) {
                 numUsers++;
                 this.mmrCache = {};
@@ -2386,7 +2386,7 @@ var User = (function () {
 		}
 	};
 	return User;
->>>>>>> upstream/master
+
 })();
 
 var Connection = (function () {
