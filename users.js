@@ -1350,7 +1350,7 @@ var User = (function () {
                 }
         };
         return User;
-=======
+
 	function User(connection) {
 		numUsers++;
 		this.mmrCache = {};
