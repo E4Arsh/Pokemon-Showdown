@@ -292,7 +292,7 @@ var commands = exports.commands = {
 	ideclare: 'image',
 	image: function(target, room, user){
 		if(!target) return this.sendReply('/image needs a link.');
-		return this.parse('/declare  <img src='+ target +'>');
+		return this.parse('/a |html|  <img src='+ target +'>');
 	},
 
 	tierpoll: 'tiervote',
