@@ -155,7 +155,7 @@ exports.customavatars = {
 	  'kingarani': 'kingarani.gif',
 	  'vaderdarkside': 'vaderdarkside.gif',
 	  'kupo': 'kupo.png',
-	  'unovachampionn': 'n.jpg',
+	  'unovachampionn': 'ucn.gif',
 	  'jackdaw': 'jackdaw.gif',
 	  'chaosherosilver': 'silver.gif',
 	  'e4photon': 'photon.gif',
