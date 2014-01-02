@@ -173,6 +173,7 @@ exports.customavatars = {
           'e6mac': 'mac.png',
           'e4aknolan': 'aknolan.jpg',
           'xxhoodedxx': 'hood.jpg',
+          'spoonfullofmeat' :'sfom.png'
 };
 
 // appealurl - specify a URL containing information on how users can appeal
