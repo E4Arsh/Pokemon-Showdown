@@ -14,6 +14,13 @@ exports.Formats = [
                 banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite']
         },
         {
+                name: "OU Monotype",
+                section: "Other Metagames",
+
+                ruleset: ['Pokemon', 'Standard', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
+                banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite']
+        },
+        {
                 name: "Ubers",
                 section: "XY Singles",
 
@@ -626,12 +633,14 @@ exports.Formats = [
                 ]
         },
         {
-                name: "OU Monotype",
-                section: "Other Metagames",
-
-                ruleset: ['Pokemon', 'Standard', 'Same Type Clause', 'Evasion Abilities Clause', 'Team Preview'],
-                banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite']
+                  name: "C&E",
+                  section: "Other Metagames",
+  
+                  searchShow: false,
+                 ruleset: ['Pokemon', 'Standard Pokebank', 'Team Preview'],
+                 banlist: ['Soul Dew', 'Uber', 'Farfetchd', 'Kangaskhan', 'Pinsir', 'Heracross', 'unown', 'girafarig', 'dunsparce', 'shuckle', 'articuno', 'zapdos', 'moltres', 'qwilfish', 'corsola', 'delibird', 'stantler', 'smeargle', 'skarmory', 'miltank', 'tauros', 'lapras', 'ditto', 'aerodactyl', 'sableye', 'mawile', 'plusle', 'minum', 'volbeat', 'illumise', 'torkoal', 'spinda', 'seviper', 'zangoose', 'lunatone', 'solrock', 'castform', 'kecleon', 'tropius', 'absol', 'relicanth', 'luvdisc', 'pachirisu']
         },
+
         {
                 name: "[Gen 5] Glitchmons",
                 section: "Other Metagames",
