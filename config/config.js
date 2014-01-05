@@ -166,7 +166,7 @@ exports.customavatars = {
 	  'aelitestorm': 'storm.gif',
 	  'shirayuri': 'okami95.png',
 	  'zarif': 'zarif.png',
-	  'enzarif': 'zarif.png',
+	  'enzarif': 'zarfalienbarf.gif',
 	  'arjunb': 'arjunb.png',
 	  'ryuuga': 'ry.png',
           'astrelegit': 'astre.png',
