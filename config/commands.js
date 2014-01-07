@@ -1193,7 +1193,15 @@ var commands = exports.commands = {
 		}
 		this.logModCommand(user.name+' globally declared '+target);
 	},
-
+	
+	thebar: function(target, room, user) {
+                if (room.id === 'lobby') return this.sendReply('This command is not designed for use in lobby.');
+                if (!this.canBroadcast()) return;
+                this.sendReplyBox('<center><b>The Bar - mac\s Room</b></center><br />' +
+                                  '<a href="http://thebar-shop.webs.com/">Website</a><br />' +
+                                  '<a href="http://thebar-shop.webs.com/shop-beta">Shop (beta)</a><br />' +
+                                  '<b><font size=3>Owner:</b> @<b>macrarazy</b>');
+        },
 
 	birkal: function(target, room, user) {
 		this.sendReply("It's not funny anymore.");
