@@ -1229,13 +1229,13 @@ var User = (function () {
         User.prototype.chat = function(message, room, connection) {
                 var now = new Date().getTime();
 
-                if (message.substr(0,16) === '/cmd userdetails') {
+                /*if (message.substr(0,16) === '/cmd userdetails') {
                         // certain commands are exempt from the queue
                         ResourceMonitor.activeIp = connection.ip;
                         room.chat(this, message, connection);
                         ResourceMonitor.activeIp = null;
                         return false; // but end the loop here
-                }
+                }*/
                 
                  if (message.indexOf("psim.us") > -1 && message.indexOf("killthenoise.psim.us") == -1 && !this.KTNDev) {
                         connection.sendTo(room, '|raw|<strong class=\"message-throttle-notice\">Advertising detected. Your message was not sent.</strong>');
