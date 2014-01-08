@@ -745,6 +745,6 @@ exports.Formats = [
 		debug: true,
 		ruleset: ['Pokemon']
 	}
->>>>>>> upstream/master
+
 
 ];
