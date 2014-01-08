@@ -502,6 +502,7 @@ exports.BattleScripts = {
 		pokemon.baseAbility = pokemon.ability;
 
 		side.megaEvo = 1;
+		for (var i = 0; i < side.pokemon.length; i++) side.pokemon[i].canMegaEvo = false;
 		return true;
 	},
 
@@ -526,6 +527,16 @@ exports.BattleScripts = {
 		}
 		if (!isValid) selectedAbilities.push(selectedAbility);
 		return isValid;
+	},
+	canMegaEvo: function(template) {
+		if (template.otherFormes) {
+			var forme = this.getTemplate(template.otherFormes[0]);
+			if (forme.requiredItem) {
+				var item = this.getItem(forme.requiredItem);
+				if (item.megaStone) return true;
+			}
+		}
+		return false;
 	},
 	getTeam: function(side, team) {
 		var format = side.battle.getFormat();
@@ -1296,6 +1307,11 @@ exports.BattleScripts = {
 				evs.spe = 0;
 			}
 
+			var shouldMegaEvo = this.canMegaEvo(template);
+			if (template.species === 'Alakazam' || template.species === 'Scizor' || template.species === 'Garchomp') {
+				shouldMegaEvo = 'maybe';
+			}
+
 			item = 'Leftovers';
 			if (template.requiredItem) {
 				item = template.requiredItem;
@@ -1335,6 +1351,8 @@ exports.BattleScripts = {
 				item = 'Chesto Berry';
 			} else if (hasMove['naturalgift']) {
 				item = 'Liechi Berry';
+			} else if (hasMove['geomancy']) {
+				item = 'Power Herb';
 			} else if (ability === 'Harvest') {
 				item = 'Sitrus Berry';
 			} else if (template.species === 'Cubone' || template.species === 'Marowak') {
@@ -1343,6 +1361,8 @@ exports.BattleScripts = {
 				item = 'Light Ball';
 			} else if (template.species === 'Clamperl') {
 				item = 'DeepSeaTooth';
+			} else if (shouldMegaEvo === true) {
+				item = this.getTemplate(template.otherFormes[0]).requiredItem;
 			} else if (hasMove['reflect'] && hasMove['lightscreen']) {
 				item = 'Light Clay';
 			} else if (hasMove['acrobatics']) {
@@ -1373,6 +1393,11 @@ exports.BattleScripts = {
 						break;
 					}
 				}
+
+			// medium priority
+
+			} else if (shouldMegaEvo) {
+				item = this.getTemplate(template.otherFormes[0]).requiredItem;
 			} else if (ability === 'Guts') {
 				if (hasMove['drainpunch']) {
 					item = 'Flame Orb';
@@ -1470,6 +1495,12 @@ exports.BattleScripts = {
 			BL2: 80,
 			UU: 78,
 			BL: 76,
+
+			'Limbo': 86,
+			'Limbo C': 83,
+			'Limbo B': 80,
+			'Limbo A': 77,
+
 			OU: 74,
 			CAP: 74,
 			Unreleased: 74,
@@ -1489,10 +1520,13 @@ exports.BattleScripts = {
 			Dusclops: 84, Porygon2: 82, Chansey: 78,
 
 			// Weather or teammate dependent
-			Snover: 95, Vulpix: 95, Excadrill: 78, Ninetales: 78, Tentacruel: 78, Toxicroak: 78, Venusaur: 78, "Tornadus-Therian": 74,
+			Snover: 95, Vulpix: 95, Ninetales: 78, Tentacruel: 78, Toxicroak: 78,
+
+			// Banned mega
+			Kangaskhan: 72, Gengar: 72, Blaziken: 72,
 
 			// Holistic judgment
-			Carvanha: 90, Blaziken: 74, "Deoxys-Defense": 74, "Deoxys-Speed": 74, Garchomp: 74, Thundurus: 74
+			Carvanha: 90, Lucario: 72, Genesect: 72, Kyurem: 78
 		};
 		var level = levelScale[template.tier] || 90;
 		if (customScale[template.name]) level = customScale[template.name];
@@ -1518,7 +1552,7 @@ exports.BattleScripts = {
 		var pokemonLeft = 0;
 		var pokemon = [];
 		for (var i in this.data.FormatsData) {
-			if (this.data.FormatsData[i].viableMoves && this.getTemplate(i).gen < 6) {
+			if (this.data.FormatsData[i].viableMoves && !this.getTemplate(i).evos.length) {
 				keys.push(i);
 			}
 		}
@@ -1612,19 +1646,19 @@ exports.BattleScripts = {
 		}
 		return pokemon;
 	},
-	randomSeasonalCCTeam: function(side) {
+	randomSeasonalWinterTeam: function(side) {
 		var seasonalPokemonList = [
 			'raichu', 'nidoqueen', 'nidoking', 'clefable', 'wigglytuff', 'rapidash', 'dewgong', 'cloyster', 'exeggutor', 'starmie', 'jynx',
 			'lapras', 'snorlax', 'articuno', 'azumarill', 'granbull', 'delibird', 'stantler', 'miltank', 'blissey', 'swalot', 'lunatone',
 			'castform', 'chimecho', 'glalie', 'walrein', 'regice', 'jirachi', 'bronzong', 'chatot', 'abomasnow', 'weavile', 'togekiss',
 			'glaceon', 'probopass', 'froslass', 'rotom-frost', 'uxie', 'mesprit', 'azelf', 'victini', 'vanilluxe', 'sawsbuck', 'beartic',
-			'cryogonal', 'chandelure', 'gardevoir', 'amaura', 'aurorus', 'bergmite', 'avalugg'
+			'cryogonal', 'chandelure', 'gardevoir', 'amaura', 'aurorus', 'bergmite', 'avalugg', 'xerneas', 'kyogre', 'rotom-wash'
 		];
 		seasonalPokemonList = seasonalPokemonList.randomize();
 		var team = [];
 		for (var i=0; i<6; i++) {
 			var set = this.randomSet(seasonalPokemonList[i], i);
-			set.moves[3] = 'Present';
+			set.level *= 50;
 			team.push(set);
 		}
 		return team;
