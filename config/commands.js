@@ -789,7 +789,11 @@ var commands = exports.commands = {
                  if (!this.canBroadcast()) return;
                  this.sendReplyBox('<center><img src="http://i.imgur.com/otDPUQU.png"><br><img src="http://i.imgur.com/eZw2ZzA.png"><img src="http://i.imgur.com/V2pL6Xe.png"><img src="http://pldh.net/media/pokemon/conquest/sprite/398.png"><br><font color="brown"><blink>Ace: Staraptor</blink><br><font color="brown">Trolltraptor is gonna troll ur ass off')},
                  
-	
+	enzarif: 'zarif',
+	zarif: function(target, room, user) {  
+                 if (!this.canBroadcast()) return;
+                 this.sendReplyBox('<center><img src="http://i.imgur.com/JetHrTD.png"><center><img src="http://i.imgur.com/lC0aRUH.gif"><img src="http://i.imgur.com/FpaGoj7.gif"><img src="http://i.imgur.com/3EIY2d9.png"><right><br /><center><b>Ace: </b>Infernape</center><br /><center><b></b>Haters gonna hate,Bitches gonna Bitch,Trolls gonna Troll.But I (Zarif) will always be DerpMan</center>')},
+         
 	ucn: 'n',
         n: function(target, room, user) {  
                  if (!this.canBroadcast()) return;
