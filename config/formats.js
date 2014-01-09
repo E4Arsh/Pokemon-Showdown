@@ -45,7 +45,7 @@ exports.Formats = [
 	},
 	{
 		name: "1v1",
-		section: 'Other Metagames',
+		section: 'XY Singles',
 
 		onBegin: function() {
 			this.p1.pokemon = this.p1.pokemon.slice(0,1);
