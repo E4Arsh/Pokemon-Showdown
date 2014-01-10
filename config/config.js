@@ -146,7 +146,7 @@ exports.customavatars = {
           'surfersunite': 'gymleadersurfing.gif',
           'queenofdubstep': 'queenofdubstep.gif',
           'championcorper': 'championcorper.gif',
-          'drascension': 'ncrypt.gif',
+          'ncrypt': 'ncrypt.gif',
           'boo118': 'boo118.gif',
           'achampaero': 'achampaero.gif',
           'championonyxe': 'championonyxe.png',
