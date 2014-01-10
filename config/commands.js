@@ -546,7 +546,7 @@ var commands = exports.commands = {
 						move = Tools.getMove(i);
 						if (move.id !== 'count') {
 							if (!move.exists) return this.sendReplyBox('"' + move + '" is not a known move.');
-							problem = Tools.checkLearnset(move, template, lsetData);
+							problem = TeamValidator().checkLearnset(move, template, lsetData);
 							if (problem) break;
 						}
 					}
@@ -614,7 +614,7 @@ var commands = exports.commands = {
 			if (!move.exists) {
 				return this.sendReply('Move "'+move.id+'" not found.');
 			}
-			problem = Tools.checkLearnset(move, template, lsetData);
+			problem = TeamValidator().checkLearnset(move, template, lsetData);
 			if (problem) break;
 		}
 		var buffer = ''+template.name+(problem?" <span class=\"message-learn-cannotlearn\">can't</span> learn ":" <span class=\"message-learn-canlearn\">can</span> learn ")+(targets.length>2?"these moves":move.name);
