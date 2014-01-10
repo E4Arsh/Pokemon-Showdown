@@ -138,7 +138,6 @@ exports.herokuhack = false;
 exports.customavatars = {
         //'userid': 'customavatar.png'
         'blakjack': 'blakjack.png',
-          'skarr': 'skarr.gif',
           'omegahunter': 'zero.png',
           'frankentein': 'frankentein.png',
           'sooperpooper': 'sooperpooper.gif',
