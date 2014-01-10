@@ -138,7 +138,6 @@ exports.herokuhack = false;
 exports.customavatars = {
         //'userid': 'customavatar.png'
         'blakjack': 'blakjack.png',
-          'skarr': 'skarr.gif',
           'omegahunter': 'zero.png',
           'frankentein': 'frankentein.png',
           'sooperpooper': 'sooperpooper.gif',
@@ -146,7 +145,7 @@ exports.customavatars = {
           'surfersunite': 'gymleadersurfing.gif',
           'queenofdubstep': 'queenofdubstep.gif',
           'championcorper': 'championcorper.gif',
-          'drascension': 'ncrypt.gif',
+          'ncrypt': 'ncrypt.gif',
           'boo118': 'boo118.gif',
           'achampaero': 'achampaero.gif',
           'championonyxe': 'championonyxe.png',
