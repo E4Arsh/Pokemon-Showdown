@@ -758,10 +758,7 @@ var commands = exports.commands = {
 	arshmalik: 'blakjack',
 	blakjack: function(target, room, user) {  
 	 	if (!this.canBroadcast()) return;
-	 	this.sendReplyBox('BlakJack <br />'+
-	 	    '<i>"Trolltraptor Gonna Troll Ur Ass Off"</i> <br />'+
-	 	    'Ace: Staraptor <br />'+
-			'<img src="http://i.imgur.com/7FypAPq.gif"><b>VS.</b><img src="http://play.pokemonshowdown.com/sprites/bwani/staraptor.gif">')},
+	 	this.sendReplyBox('<center><img src="http://i.imgur.com/otDPUQU.png"><br><img src="http://i.imgur.com/Wdthjon.png"><img src="http://i.imgur.com/dck9vdP.png"><img src="http://i.imgur.com/5VqH7tF.png"><br><font color="brown"><blink>Ace: Swellow</blink><br><font color="brown">Haters Gonna Hate, Potatotes Gonna Potate But nCrypt\'s Gonna Masturbate')},
 	
 		
 	surfersunite: 'surfing',
