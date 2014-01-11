@@ -169,11 +169,10 @@ exports.customavatars = {
           'arjunb': 'arjunb.gif',
           'ryuuga': 'ry.png',
           'astrelegit': 'astre.png',
-          'macrarazy': 'mac.png',
+          'e6mac': 'mac.png',
           'e4aknolan': 'aknolan.jpg',
           'xxhoodedxx': 'hood.jpg',
           'spoonfullofmeat' :'sfom.png',
-          'siiilver': 'siiilver.png',
 
 
 };
