@@ -918,20 +918,11 @@ var commands = exports.commands = {
 	roomhelp: function(target, room, user) {
 		if (room.id === 'lobby') return this.sendReply('This command is too spammy for lobby.');
 		if (!this.canBroadcast()) return;
-<<<<<<< HEAD
-		this.sendReplyBox('Room Operator ($) can use:<br />' +
-			'- /warn <em>username</em>: Warns The Person<br />' +
-			'<br />' +
-			'Room drivers (%) can use:<br />' +
-			'- /mute <em>username</em>: 7 minute mute<br />' +
-			'- /hourmute <em>username</em>: 60 minute mute<br />' +
-=======
-		this.sendReplyBox('Room drivers (%) can use:<br />' +
+        this.sendReplyBox('Room drivers (%) can use:<br />' +
 			'- /warn OR /k <em>username</em>: warn a user and show the Pokemon Showdown rules<br />' +
 			'- /mute OR /m <em>username</em>: 7 minute mute<br />' +
 			'- /hourmute OR /hm <em>username</em>: 60 minute mute<br />' +
->>>>>>> upstream/master
-			'- /unmute <em>username</em>: unmute<br />' +
+            '- /unmute <em>username</em>: unmute<br />' +
 			'- /announce OR /wall <em>message</em>: make an announcement<br />' +
 			'<br />' +
 			'Room moderators (@) can also use:<br />' +
@@ -941,18 +932,9 @@ var commands = exports.commands = {
 			'- /roomdevoice <em>username</em>: remove a room voice<br />' +
 			'- /modchat <em>[off/autoconfirmed/+]</em>: set modchat level<br />' +
 			'<br />' +
-			'Room leader (&) can also use:<br />' +
-			'- /declare <em>message</em>: make a global declaration<br />' +
-			'- /roommod, /roomdriver <em>username</em>: appoint a room moderator/driver<br />' +
-			'- /roomdemod, /roomdedriver <em>username</em>: remove a room moderator/driver<br />' +
-<<<<<<< HEAD
-			'<br />' +
 			'Room owners (#) can also use:<br />' +
-			'- /roomleader <em>username</em>: appoint a room leader<br />' +
-=======
 			'- /modchat <em>[%/@/#]</em>: set modchat level<br />' +
->>>>>>> upstream/master
-			'- /declare <em>message</em>: make a global declaration<br />' +
+            '- /declare <em>message</em>: make a global declaration<br />' +
 			'</div>');
 	},
 
@@ -987,7 +969,7 @@ var commands = exports.commands = {
 	site: function(target, room, user) {
 		if (!this.canBroadcast()) return;
 		this.sendReplyBox('Link For The Leagues Site<br />' +
-			'- <a href="http://ktnl.weebly.com/">League Site</a><br />' +
+			'- <a href="http://originleague.weebly.com/">League Site</a><br />' +
 			'</div>');
 	},
 
