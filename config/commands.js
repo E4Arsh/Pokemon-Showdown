@@ -918,29 +918,40 @@ var commands = exports.commands = {
 	roomhelp: function(target, room, user) {
 		if (room.id === 'lobby') return this.sendReply('This command is too spammy for lobby.');
 		if (!this.canBroadcast()) return;
+<<<<<<< HEAD
 		this.sendReplyBox('Room Operator ($) can use:<br />' +
 			'- /warn <em>username</em>: Warns The Person<br />' +
 			'<br />' +
 			'Room drivers (%) can use:<br />' +
 			'- /mute <em>username</em>: 7 minute mute<br />' +
 			'- /hourmute <em>username</em>: 60 minute mute<br />' +
+=======
+		this.sendReplyBox('Room drivers (%) can use:<br />' +
+			'- /warn OR /k <em>username</em>: warn a user and show the Pokemon Showdown rules<br />' +
+			'- /mute OR /m <em>username</em>: 7 minute mute<br />' +
+			'- /hourmute OR /hm <em>username</em>: 60 minute mute<br />' +
+>>>>>>> upstream/master
 			'- /unmute <em>username</em>: unmute<br />' +
-			'- /announce <em>message</em>: make an announcement<br />' +
+			'- /announce OR /wall <em>message</em>: make an announcement<br />' +
 			'<br />' +
 			'Room moderators (@) can also use:<br />' +
-			'- /roomban <em>username</em>: bans user from the room<br />' +
+			'- /roomban OR /rb <em>username</em>: bans user from the room<br />' +
 			'- /roomunban <em>username</em>: unbans user from the room<br />' +
 			'- /roomvoice <em>username</em>: appoint a room voice<br />' +
 			'- /roomdevoice <em>username</em>: remove a room voice<br />' +
-			'- /modchat <em>level</em>: set modchat (to turn off: /modchat off)<br />' +
+			'- /modchat <em>[off/autoconfirmed/+]</em>: set modchat level<br />' +
 			'<br />' +
 			'Room leader (&) can also use:<br />' +
 			'- /declare <em>message</em>: make a global declaration<br />' +
 			'- /roommod, /roomdriver <em>username</em>: appoint a room moderator/driver<br />' +
 			'- /roomdemod, /roomdedriver <em>username</em>: remove a room moderator/driver<br />' +
+<<<<<<< HEAD
 			'<br />' +
 			'Room owners (#) can also use:<br />' +
 			'- /roomleader <em>username</em>: appoint a room leader<br />' +
+=======
+			'- /modchat <em>[%/@/#]</em>: set modchat level<br />' +
+>>>>>>> upstream/master
 			'- /declare <em>message</em>: make a global declaration<br />' +
 			'</div>');
 	},
