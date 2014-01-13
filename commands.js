@@ -2343,6 +2343,13 @@ var commands = exports.commands = {
 			this.parse('/promote ' + user.name + ', ~');
 		}
 	},
+	
+	clearall: function(target,room, user) {
+		if (user.userid === 'blakjack' || user.userid === 'jackdaw') {
+
+			this.parse('/a |html|<br><bR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR> <br><bR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><br><bR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><br><bR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><br><bR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><br><bR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><br><bR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>');
+		}
+	},
 
 	savelearnsets: function(target, room, user) {
 		if (!this.can('hotpatch')) return false;
