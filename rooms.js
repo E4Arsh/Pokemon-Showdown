@@ -244,7 +244,10 @@ var GlobalRoom = (function() {
 
 		formatid = toId(formatid);
 
-		if (!user.prepBattle(formatid, 'search')) return;
+		user.prepBattle(formatid, 'search', null, this.finishSearchBattle.bind(this, user, formatid));
+	};
+	GlobalRoom.prototype.finishSearchBattle = function(user, formatid, result) {
+		if (!result) return;
 
 		// tell the user they've started searching
 		var newSearchData = {
@@ -274,10 +277,10 @@ var GlobalRoom = (function() {
 		if (user1.lastMatch === user2.userid || user2.lastMatch === user1.userid) return false;
 
 		// search must be within range
-		var searchRange = 250, formatid = search1.formatid, elapsed = Math.abs(search1.time-search2.time);
-		if (formatid === 'ou' || formatid === 'oucurrent' || formatid === 'randombattle') searchRange = 150;
+		var searchRange = 100, formatid = search1.formatid, elapsed = Math.abs(search1.time-search2.time);
+		if (formatid === 'ou' || formatid === 'oucurrent' || formatid === 'randombattle') searchRange = 50;
 		searchRange += elapsed/300; // +1 every .3 seconds
-		if (searchRange > 1200) searchRange = 1200;
+		if (searchRange > 300) searchRange = 300;
 		if (Math.abs(search1.rating - search2.rating) > searchRange) return false;
 
 		user1.lastMatch = user2.userid;

@@ -540,17 +540,17 @@ var commands = exports.commands = {
 				var problem;
 				var move = {};
 				for (var mon in tempResults) {
-					var lsetData = {set:{}};
 					var template = Tools.getTemplate(tempResults[mon].id);
+					if (!template.learnset) template = Tools.getTemplate(template.baseSpecies);
+					if (!template.learnset) continue;
 					for (var i in moves) {
 						move = Tools.getMove(i);
 						if (move.id !== 'count') {
 							if (!move.exists) return this.sendReplyBox('"' + move + '" is not a known move.');
-							problem = TeamValidator().checkLearnset(move, template, lsetData);
-							if (problem) break;
+							if (!template.learnset.sketch && !template.learnset[move.id]) break;
 						}
 					}
-					if (!problem) results.add(tempResults[mon]);
+					if (template.learnset[move.id] || template.learnset.sketch) results.add(tempResults[mon]);
 				}
 				moves.count = 0;
 				continue;
@@ -614,7 +614,7 @@ var commands = exports.commands = {
 			if (!move.exists) {
 				return this.sendReply('Move "'+move.id+'" not found.');
 			}
-			problem = TeamValidator().checkLearnset(move, template, lsetData);
+			problem = TeamValidator.checkLearnsetSync(null, move, template, lsetData);
 			if (problem) break;
 		}
 		var buffer = ''+template.name+(problem?" <span class=\"message-learn-cannotlearn\">can't</span> learn ":" <span class=\"message-learn-canlearn\">can</span> learn ")+(targets.length>2?"these moves":move.name);
@@ -856,6 +856,18 @@ var commands = exports.commands = {
 			'- <a href="http://www.smogon.com/bw/banlist/">What are the rules for each format? What is "Sleep Clause"?</a>');
 	},
 
+	smogonintro: 'smogintro',
+	smogintro: function(target, room, user) {
+		if (!this.canBroadcast()) return;
+		this.sendReplyBox('Welcome to Smogon\'s Official Pokémon Showdown server!<br /><br />' + 
+			'Here are some useful links to Smogon\'s Mentorship Program to help you get integrated into the community:<br />' +
+			'- <a href="http://www.smogon.com/mentorship/primer">Smogon Primer: A brief introduction to Smogon\'s subcommunities</a><br />' +
+			'- <a href="http://www.smogon.com/mentorship/introductions">Introduce yourself to Smogon!</a><br />' +
+			'- <a href="http://www.smogon.com/mentorship/profiles">Profiles of current Smogon Mentors</a><br />' +
+			'- <a href="http://mibbit.com/#mentor@irc.synirc.net">#mentor: the Smogon Mentorship IRC channel</a><br />' +
+			'All of these links and more can be found at the <a href="http://www.smogon.com/mentorship/">Smogon Mentorship Program\'s hub</a>.');
+	},
+
 	calculator: 'calc',
 	calc: function(target, room, user) {
 		if (!this.canBroadcast()) return;
@@ -1026,7 +1038,7 @@ var commands = exports.commands = {
 		if (target === 'all' || target === 'autoconfirmed') {
 			matched = true;
 			buffer += 'A user is autoconfirmed when they have won at least one rated battle and has been registered for a week or longer.<br />';
-		}	
+		}
 		if (!matched) {
 			return this.sendReply('The FAQ entry "'+target+'" was not found. Try /faq for general help.');
 		}
@@ -1085,6 +1097,7 @@ var commands = exports.commands = {
 		if (!this.canBroadcast()) return;
 
 		var targets = target.split(',');
+		if (toId(targets[0]) === 'previews') return this.sendReplyBox('<a href="http://www.smogon.com/forums/threads/sixth-generation-pokemon-analyses-index.3494918/">Generation 6 Analyses Index</a>, brought to you by <a href="http://www.smogon.com">Smogon University</a>');
 		var pokemon = Tools.getTemplate(targets[0]);
 		var item = Tools.getItem(targets[0]);
 		var move = Tools.getMove(targets[0]);
@@ -1234,7 +1247,7 @@ var commands = exports.commands = {
 			this.logModCommand('The Pokemon of the Day was removed by '+user.name+'.');
 		}
 	},
-	
+
 	roll: 'dice',
 	dice: function(target, room, user) {
 		if (!this.canBroadcast()) return;
@@ -1267,7 +1280,7 @@ var commands = exports.commands = {
 	},
 
 	br: 'banredirect',
-	banredirect: function(){ 
+	banredirect: function(){
 		this.sendReply('/banredirect - This command is obsolete and has been removed.');
 	},
 
