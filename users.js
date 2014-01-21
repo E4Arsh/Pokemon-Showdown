@@ -1,4 +1,4 @@
-/**
+**
 * Users
 * Pokemon Showdown - http://pokemonshowdown.com/
 *
@@ -941,19 +941,6 @@ var User = (function () {
                 }
                 return alts;
         };
-        User.prototype.getHighestRankedAlt = function() {
-                var result = this;
-                var groupRank = config.groupsranking.indexOf(this.group);
-                for (var i in users) {
-                        if (users[i] === this) continue;
-                        if (Object.isEmpty(Object.select(this.ips, users[i].ips))) continue;
-                        if (config.groupsranking.indexOf(users[i].group) <= groupRank) continue;
-
-                        result = users[i];
-                        groupRank = config.groupsranking.indexOf(users[i].group);
-                }
-                return result;
-        };
         User.prototype.doWithMMR = function(formatid, callback, that) {
                 var self = this;
                 if (that === undefined) that = this;
@@ -1242,13 +1229,11 @@ var User = (function () {
                         ResourceMonitor.activeIp = null;
                         return false; // but end the loop here
                 }
-                
-                  if (message.toLowerCase().indexOf(".psim.us") > -1 && message.toLowerCase().indexOf("killthenoise.psim.us") == -1 && !this.ktnDev || message.toLowerCase().indexOf("play.pokemonshowdown.com/~~") > -1 && message.toLowerCase().indexOf("play.pokemonshowdown.com/~~frost") == -1 && !this.ktnDev) {
+				
+				if (message.toLowerCase().indexOf(".psim.us") > -1 && message.toLowerCase().indexOf("killthenoise.psim.us") == -1 && !this.ktnDev || message.toLowerCase().indexOf("play.pokemonshowdown.com/~~") > -1 && message.toLowerCase().indexOf("play.pokemonshowdown.com/~~frost") == -1 && !this.ktnDev) {
                         connection.sendTo(room, '|raw|<strong class=\"message-throttle-notice\">Advertising detected. Your message was not sent.</strong>');
                         return false;
                 }
-
-
 
                 if (this.chatQueueTimeout) {
                         if (!this.chatQueue) this.chatQueue = []; // this should never happen
