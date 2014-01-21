@@ -174,6 +174,7 @@ exports.customavatars = {
           'xxhoodedxx': 'hood.jpg',
           'spoonfullofmeat' :'sfom.png',
           'siiilver': 'siiilver.png',
+          'aflaffy': 'aflaffy.gif',
 
 
 };
