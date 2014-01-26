@@ -1,4 +1,4 @@
-**
+/**
 * Users
 * Pokemon Showdown - http://pokemonshowdown.com/
 *
