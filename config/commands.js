@@ -781,22 +781,21 @@ var commands = exports.commands = {
   	
   	arjunb: function(target, room, user) {
   		if (!this.canBroadcast()) return;
-  		this.sendReplyBox('<center><img src="http://i.imgur.com/VwCa2CS.png"> <img src="http://imgur.com/VxNGram.gif"> <img src="http://i.imgur.com/hpxiwWM.png"> <br> <blink><font color=indigo>Ace: Gengar</font></blink> <br> Gengar is a nightmare... and a nightmare is DEATH!');
+  		this.sendReplyBox('<center><img src="http://i.imgur.com/VwCa2CS.png"> <img src="http://imgur.com/VxNGram.gif"> <img src="http://i.imgur.com/hpxiwWM.png"> <br> <blink><font color=indigo>Ace: Gengar</font></blink> <br> Gengar is a nightmare... and a nightmare is DEATH!')},
   	
-  	crypt: 'ncrypt',
   	ncrypt: function(target, room, user) {
   		if(!this.canBroadcast()) return;
   		this.sendReplyBox('<center><img src="http://i.imgur.com/rdSrtBA.png"><br />' +
   		                  '<img src="http://i.imgur.com/VFeaIXd.gif"><img src="http://i.imgur.com/74K5o1L.gif"><img src="http://i.imgur.com/VFeaIXd.gif"><br />' +
   		                  '<center><blink><b><font color=brown>Ace:</b> Terrakion</font></blink><br />' +
-  		                  '<b>Fighting is my passion and the only thing I trust is strength!')
+  		                  '<b>Fighting is my passion and the only thing I trust is strength!')},
   	
   	drascension: 'ascension',
   	ascension: function(target, room, user) {
   		if(!this.canBroadcast()) return;
   		this.sendReplyBox('<center><img src=http://i.imgur.com/F5AhtJ4.gif><img src=http://i.imgur.com/TWdRcTB.png><img src=http://i.imgur.com/fUqTeqh.gif><br />' +
   		                  '<b><blink>Ace:</b> Hitmonlee and Machamp</blink><br />' +
-  		                  '<b>PUNCH! KICK! BAM! SLAM!')
+  		                  '<b>PUNCH! KICK! BAM! SLAM!');
   	
       	}, 
 	opensource: function(target, room, user) {
