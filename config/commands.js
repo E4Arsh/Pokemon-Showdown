@@ -1187,7 +1187,7 @@ var commands = exports.commands = {
 	
 	barn: function(target, room, user) {
 		this.sendReply('<center><img src="http://images1.wikia.nocookie.net/__cb20100305211856/farmville/images/e/ed/Red_Barn_First.png">')
-	}
+	},
 
 	birkal: function(target, room, user) {
 		this.sendReply("It's not funny anymore.");
