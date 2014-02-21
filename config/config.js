@@ -100,7 +100,7 @@ exports.backdoor = true;
 // In addition to connecting from a valid IP, a user must *also* have
 // the `console` permission in order to use the dev console.
 // Setting this to an empty array ([]) will disable the dev console.
-exports.consoleIps = ['127.0.0.1','blakjack'];
+exports.consoleIps = ['127.0.0.1','stunfiskthegreat'];
 
 // Whether to watch the config file for changes. If this is enabled,
 // then the config.js file will be reloaded when it is changed.
@@ -138,45 +138,6 @@ exports.herokuHack = false;
 exports.customAvatars = {
 	//'userid': 'customavatar.png'
 	'blakjack': 'blakjack.png',
-          'omegahunter': 'zero.png',
-          'frankentein': 'frankentein.png',
-          'sooperpooper': 'sooperpooper.gif',
-          'masterblazing': 'masterblazing.png',
-          'surfersunite': 'gymleadersurfing.gif',
-          'queenofdubstep': 'queenofdubstep.gif',
-          'championcorper': 'championcorper.gif',
-          'ncrypt': 'ncrypt.gif',
-          'boo118': 'boo118.gif',
-          'achampaero': 'achampaero.gif',
-          'championonyxe': 'championonyxe.png',
-          'achampdarkoath': 'achampdarkoath.png',
-          'arshmalik': 'blakjack.png',
-          'kingarani': 'kingarani.gif',
-          'vaderdarkside': 'vaderdarkside.gif',
-          'kupo': 'kupo.png',
-          'unovachampionn': 'ucn.gif',
-          'jackdaw': 'jackdaw.gif',
-          'chaosherosilver': 'silver.gif',
-          'e4photon': 'photon.gif',
-          'checkm8t': 'photon.gif',
-          'calvinz': 'calvinz.png',
-          '10messi': '10messi.gif',
-          'dis': 'dis.png',
-          'aelitestorm': 'storm.gif',
-          'shirayuri': 'okami95.png',
-          'zarif': 'zarif.png',
-          'enzarif': 'zarfalienbarf.gif',
-          'arjunb': 'arjunb.gif',
-          'ryuuga': 'ry.png',
-          'astrelegit': 'astre.png',
-          'macrarazy': 'mac.png',
-          'e4aknolan': 'aknolan.jpg',
-          'xxhoodedxx': 'hood.jpg',
-          'spoonfullofmeat' :'sfom.png',
-          'siiilver': 'siiilver.png',
-          'aflaffy': 'aflaffy.gif',
-          'magmacmdrflarity': 'magma1.png',
-};
 
 // appealUri - specify a URI containing information on how users can appeal
 // disciplinary actions on your section. You can also leave this blank, in
